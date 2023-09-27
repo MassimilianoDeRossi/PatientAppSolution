@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:loc="clr-namespace:PatientApp.Localization"
+             x:Class="PatientApp.Views.PrivacyAndLegalTermsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Home}">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LegalTermsAndPrivacyTitle], Source={x:Static loc:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <WebView Grid.Row="1">
+            <WebView.Source>
+                <HtmlWebViewSource Html="{Binding LegalTermsAndPrivacyText}"/>
+            </WebView.Source>
+        </WebView>
+
+
+    </Grid>
+</views:BaseContentPage>

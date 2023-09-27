@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:loc="clr-namespace:PatientApp.Localization"
+             x:Class="PatientApp.Views.SupportPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Home}"
+             >
+
+    <Grid  BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblSupportTitle], Source={x:Static loc:Translator.Instance}}" />
+        <WebView Grid.Row="1" Navigating="WebView_Navigating" Navigated="WebView_Navigated" >
+            <WebView.Source>
+                <UrlWebViewSource Url="{Binding SupportUrl, Mode=TwoWay}" />
+            </WebView.Source>
+        </WebView>
+        <ActivityIndicator x:Name="aiBusy" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,10,0"
+                           Color="White" IsRunning="True"  />
+
+    </Grid>
+</views:BaseContentPage>

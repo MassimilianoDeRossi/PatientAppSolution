@@ -1,0 +1,1469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props" Condition="Exists('..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25B22CF8-8B86-406A-B4CF-78D7548137A9}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PatientApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>PatientApp.iOS</AssemblyName>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ProvisioningType>manual</ProvisioningType>
+    <DisableExtraReferences>true</DisableExtraReferences>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Distribution: Orthofix srl (6K2BR9XFKJ)</CodesignKey>
+    <CodesignProvision>myHexPlanDistr2022</CodesignProvision>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Antonio Stella (Z4NG9648HH)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
+    <IOSDebuggerPort>10000</IOSDebuggerPort>
+    <BuildIpa>true</BuildIpa>
+    <IpaMetadata>Entitlements.plist</IpaMetadata>
+    <IpaIncludeArtwork>true</IpaIncludeArtwork>
+    <CodesignProvision>VS: com.orthofix.myhexplan.on Development</CodesignProvision>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: Orthofix srl (6K2BR9XFKJ)</CodesignKey>
+    <!--CodesignEntitlements>Entitlements.plist</CodesignEntitlements -->
+    <CodesignProvision>myHexPlanDistrProfile2022</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>e1430aae-aef8-4f9e-b536-eb709044492b</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <IpaMetadata>iTunesMetadata.plist</IpaMetadata>
+    <IpaIncludeArtwork>false</IpaIncludeArtwork>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;AD_HOC_PROFILE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <DefineConstants>__IOS__;__MOBILE__;__UNIFIED__;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestCloud|iPhoneSimulator'">
+    <OutputPath>bin\iPhoneSimulator\TestCloud\</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestCloud|iPhone'">
+    <OutputPath>bin\iPhone\TestCloud\</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;ENABLE_TEST_CLOUD;</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodesignKey>iPhone Distribution: Orthofix srl (6K2BR9XFKJ)</CodesignKey>
+    <MtouchArch>ARM64</MtouchArch>
+    <BuildIpa>true</BuildIpa>
+    <IpaMetadata>iTunesMetadata.plist</IpaMetadata>
+    <CodesignProvision>myHexPlanON_DistrProfile2022</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugTestCloud|iPhoneSimulator'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\iPhoneSimulator\DebugTestCloud\</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;ENABLE_TEST_CLOUD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: Emily Victoria Buxton (2CVD69653X)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugTestCloud|iPhone'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\iPhone\DebugTestCloud\</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;__MOBILE__;__IOS__;ENABLE_TEST_CLOUD;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ResourceLoader.cs" />
+    <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Localization\ICultureInfo.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="NoScrollListViewEffect.cs" />
+    <Compile Include="Renderer\CustomPageRenderer.cs" />
+    <Compile Include="Renderer\RoundedBoxRenderer.cs" />
+    <Compile Include="Renderer\CustomListViewRenderer.cs" />
+    <Compile Include="Renderer\ViewCellTransparentRenderer.cs" />
+    <Compile Include="Renderer\IntSliderRenderer.cs" />
+    <Compile Include="Renderer\CustomTimePickerRenderer.cs" />
+    <Compile Include="Renderer\CustomTabbedPageRenderer.cs" />
+    <Compile Include="Renderer\LineEntryRenderer.cs" />
+    <Compile Include="Services\DeviceIntegrityService.cs" />
+    <Compile Include="Services\EntryPopupLoader.cs" />
+    <Compile Include="Services\IOSHelloFormsService.cs" />
+    <Compile Include="Services\CryptoService.cs" />
+    <Compile Include="Services\NotificationManagerImplementation.cs" />
+    <Compile Include="Services\OrientationManagerService.cs" />
+    <Compile Include="Services\FeedbackService.cs" />
+    <Compile Include="Services\TakePhotoWithOverlayImplementation.cs" />
+    <Compile Include="Services\StopMotionImplementation.cs" />
+    <Compile Include="Services\ShareMediaService.cs" />
+    <Compile Include="Services\SQLite.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="UnderlineEffect.cs" />
+    <Compile Include="UserNotificationCenterDelegate.cs" />
+    <Compile Include="Utilities\CameraWithOverlay.cs" />
+    <Compile Include="Utilities\StopMotionBuilder.cs" />
+    <Compile Include="Utilities\UILocalNotificationExtensions.cs" />
+    <Compile Include="Utilities\NSDateExtensions.cs" />
+    <Compile Include="Utilities\NSDictionaryExtensions.cs" />
+    <Compile Include="Utilities\CryptoHelper.cs" />
+    <Compile Include="Utilities\SigningCertHelper.cs" />
+    <BundleResource Include="Base.lproj\InfoPlist.strings" />
+    <None Include="app.config" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork@2x" />
+    <None Include="iTunesMetadata.plist" />
+    <BundleResource Include="Resources\Fonts\Titillium-Bold.otf" />
+    <BundleResource Include="Resources\Fonts\Titillium-Light.otf" />
+    <BundleResource Include="Resources\Fonts\Titillium-Regular.otf" />
+    <BundleResource Include="Resources\Fonts\Titillium-Semibold.otf" />
+    <BundleResource Include="Resources\Fonts\Titillium-Thin.otf" />
+    <EmbeddedResource Include="Resources\Cert\CertificateWithPrivateKey.pfx" />
+    <EmbeddedResource Include="Resources\Cert\publtlhex.der.cer" />
+    <BundleResource Include="Resources\ip7plusSplash.png" />
+    <BundleResource Include="Resources\de.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\it.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\fr.lproj\InfoPlist.strings" />
+    <BundleResource Include="Resources\es.lproj\InfoPlist.strings" />
+    <InterfaceDefinition Include="Storyboard.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info-DevVer.plist" Condition=" '$(Configuration)' == 'Debug' ">
+      <LogicalName>Info.plist</LogicalName>
+    </None>
+    <None Include="Info-DevVer.plist" Condition=" '$(Configuration)' == 'DebugTestCloud' ">
+      <LogicalName>Info.plist</LogicalName>
+    </None>
+    <None Include="Info-DevVer.plist" Condition=" '$(Configuration)' == 'Ad-Hoc' ">
+      <LogicalName>Info.plist</LogicalName>
+    </None>
+    <None Include="Info.plist" Condition=" '$(Configuration)' == 'Release' " />
+    <None Include="Info.plist" Condition=" '$(Configuration)' == 'TestCloud' " />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="Info-DevVer.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Autofac.5.0.0\lib\netstandard2.1\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=6.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Autofac.Extras.CommonServiceLocator.6.0.1\lib\netstandard2.0\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Calabash, Version=21.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.TestCloud.Agent.0.21.5\lib\Xamarin.iOS\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\CarouselView.FormsPlugin.6.0.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="CarouselView.FormsPlugin.iOS, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\CarouselView.FormsPlugin.6.0.0\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\CommonServiceLocator.2.0.6\lib\netstandard2.1\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Corcav.Behaviors, Version=2.3.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Corcav.Behaviors.2.3.7\lib\dotnet\Corcav.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView, Version=1.0.6542.36915, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\DLToolkit.Forms.Controls.FlowListView.2.0.10\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+netstandard1.0\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.FFImageLoading.2.3.6\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.FFImageLoading.Forms.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.FFImageLoading.Forms.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.FFImageLoading.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.iOS, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.Analytics.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.iOS.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.Analytics.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.Crashes.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.Crashes.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.iOS.Bindings, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.AppCenter.4.1.0\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Microsoft.Rest.ClientRuntime.2.3.24\lib\netstandard2.0\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xamarin.Forms.VideoPlayer, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Octane.Xam.VideoPlayer.3.1.0\lib\Xamarin.iOS10\Octane.Xamarin.Forms.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xamarin.Forms.VideoPlayer.iOS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Octane.Xam.VideoPlayer.3.1.0\lib\Xamarin.iOS10\Octane.Xamarin.Forms.VideoPlayer.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="PCLAppConfig, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\PCLAppConfig.1.0.1\lib\Xamarin.iOS\PCLAppConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\PCLAppConfig.1.0.1\lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\PCLAppConfig.1.0.1\lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugin.Connectivity.3.2.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugin.Connectivity.3.2.0\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugin.Media.3.1.3\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media.Abstractions, Version=3.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Plugin.Media.3.1.3\lib\Xamarin.iOS10\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\..\..\Packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\..\..\Packages\Xam.Plugins.Settings.3.1.1\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Share, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Share.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup, Version=1.2.0.223, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Rg.Plugins.Popup.1.2.0.223\lib\Xamarin.IOS\Rg.Plugins.Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="Rg.Plugins.Popup.IOS, Version=1.2.0.223, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Rg.Plugins.Popup.1.2.0.223\lib\Xamarin.IOS\Rg.Plugins.Popup.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.8.116.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\sqlite-net-pcl.1.8.116\lib\netstandard2.0\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.0.4.976, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.bundle_e_sqlcipher.2.0.4\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.4.976, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.core.2.0.4\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.lib.e_sqlcipher.ios, Version=2.0.4.976, Culture=neutral, PublicKeyToken=cdacefa0eb8d9dac, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.lib.e_sqlcipher.ios.2.0.4\lib\xamarinios10\SQLitePCLRaw.lib.e_sqlcipher.ios.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.nativelibrary, Version=2.0.4.976, Culture=neutral, PublicKeyToken=502ed628492ab262, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.bundle_green.2.0.4\lib\Xamarin.iOS10\SQLitePCLRaw.nativelibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.0.4.976, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.provider.dynamic_cdecl.2.0.4\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.internal, Version=2.0.4.976, Culture=neutral, PublicKeyToken=89ae75803b2c608d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.provider.internal.2.0.4\lib\netstandard2.0\SQLitePCLRaw.provider.internal.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3, Version=1.1.14.520, Culture=neutral, PublicKeyToken=62684c7b4f184e3f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.14\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="WebP.Touch, Version=1.0.6628.22311, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Xam.Behaviors, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xam.Behaviors.1.0.1\lib\netstandard2.0\Xam.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.Essentials.1.7.0\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.Forms.5.0.0.2196\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.Forms.5.0.0.2196\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.Forms.5.0.0.2196\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\Xamarin.Forms.5.0.0.2196\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="ZXing.Net.Mobile.Core, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\ZXing.Net.Mobile.Forms.2.4.1\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms.iOS, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\ZXing.Net.Mobile.Forms.2.4.1\lib\Xamarin.iOS10\ZXing.Net.Mobile.Forms.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable, Version=0.16.2.0, Culture=neutral, PublicKeyToken=830ae994e36ac27d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Packages\ZXing.Net.Mobile.2.4.1\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-60%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-60%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-72%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-76.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-76%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small-40%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small-50%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pinsitecare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pinsitecare%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\instruction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\timelapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgeon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico timelapse%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\instruction%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\prescription%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shopping%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\diary%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\diary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\daily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scan%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\skipscan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\skipscan%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_calendar%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_calendar_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_calendar_on%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_camera%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_camera_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_camera_on%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_home%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_home_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_home_on%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_setting%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_setting_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_setting_on%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_user_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\toolbar_user_on%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-60@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-60@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-76@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small-20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small-40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small-40@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small@2x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\appicon-Small@3x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-568h@2x~iphone_640x1136.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-667h%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Landscape@2x~ipad_2048x1536.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Landscape~ipad_1024x768.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Portrait@2x~ipad_1125x2436.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Portrait@2x~ipad_1536x2048.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Portrait@2x~ipad_828x1792.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Portrait~ipad_768x1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default@2x~iphone_640x960.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\ip7plusSplash.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Landscape-736h%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-Portrait-736h%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Default-750%402x~iphone6-portrait_750x1334.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagons_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagons_half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\prescription_scan_sample.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\video_topimage.png" />
+    <BundleResource Include="Resources\welcome_anonymous%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome_user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome_anonymous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\circle_camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_01_annoyed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_02_nervous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_03_sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_04_bored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_05_neutral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_06_calm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_07_satisfied.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_08_happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_09_excited.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrow left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arrow right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done_doctor-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done_doctor big%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done_doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done-female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done_doctor%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done-female%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done-male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\done-male%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawing-scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawing-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawing scan%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drawing user%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon-color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon-pinsite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon-strut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon home%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon pinsite%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_1%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_3%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_4%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_5%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut_6%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Exagon_strut%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\exapod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\exapod%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home-pinsitecare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home-shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home-strut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home-surgeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home-instruction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home instruction%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home pinsitecare%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home shopping%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home strut%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home surgeon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico-prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico prescription%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_addcontact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_calendar%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_checkoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_checkon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_consolidation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_correction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_daily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_days.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_days%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_generic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_goal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_latency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_physical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_removal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_sms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Ico_surgeon big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_surgeon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_today.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_today%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\length_ruler%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood-female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood-female%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_male%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Neutral%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio-active%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio_check%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\radio-uncheck%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome-app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\welcome app%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_daily_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_00_unselected%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_prescription_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mood_male.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_cleansing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_pinsitecare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_cleansing%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\img_pinsitecare%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut_alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_minus_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_plus_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triangle_sepline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_gradientcell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\video_topimage%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\play%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bkg_strut_cell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut_done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_minus_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_plus_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_minus_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_plus_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon_pinsitealert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon_strutadj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon_strutadjalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-Small-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-1242%403x~iphone6s-landscape_2208x1242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-1242%403x~iphone6s-portrait_1242x2208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x~iphone_640x1136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-750%402x~iphone6-landscape_1334x750.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-750%402x~iphone6-portrait_750x1334.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Landscape%402x~ipad_2048x1496.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Landscape%402x~ipad_2048x1536.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Landscape~ipad_1024x748.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Landscape~ipad_1024x768.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x~ipad_1536x2008.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x~ipad_1536x2048.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait~ipad_768x1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x~iphone_640x960.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default~ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default~iphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\appicon-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Media.xcassets\LaunchImages.launchimage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgeon_topimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_pinsitecare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ico_strut adj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Orthofix_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\box_ombra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\box_ombra%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\message_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phone_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hexagon_prescriptionalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\datepicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\datepicker%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut_alert%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\strut_done%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\surgeon_topimage%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scanbrackets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\alert%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\direction_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\support%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\time_lapse_build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\timelapse_take_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\album.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\album%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\noalbum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\noimages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\video_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close_inv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\time_lapse_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\time_lapse_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\time_lapse_overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flag_fra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flag_ger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flag_ita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flag_spa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flag_uk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x~ipad_1125x2436.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x~ipad_828x1792.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagon_pinsitealert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagon_prescriptionalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagon_strutadj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagon_strutadjalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagons_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\de.lproj\hexagons_half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagon_pinsitealert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagon_prescriptionalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagon_strutadj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagon_strutadjalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagons_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\es.lproj\hexagons_half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagon_pinsitealert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagon_prescriptionalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagon_strutadj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagon_strutadjalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagons_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fr.lproj\hexagons_half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagon_pinsitealert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagon_prescriptionalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagon_strutadj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagon_strutadjalert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagons_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\it.lproj\hexagons_half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PatientApp.Interfaces.Standard\PatientApp.Interfaces.Standard.csproj">
+      <Project>{bf9fef90-5cdb-41c9-846a-67a592cdeef2}</Project>
+      <Name>PatientApp.Interfaces.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PatientApp.Standard\PatientApp.Standard.csproj">
+      <Project>{627c650f-1989-40d1-a973-b475bbc3d5a9}</Project>
+      <Name>PatientApp.Standard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\..\Packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+  <Import Project="..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets" Condition="Exists('..\..\..\Packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarPatientAppiOSHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\..\..\Packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\..\Packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+              xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             xmlns:converters="clr-namespace:PatientApp.Converters;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.PersonalGoalPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Settings}">
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <ScrollView>
+        <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <controls:HeaderControl Grid.Row="0" Title="{Binding [LblPersonalGoalTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+            <Grid Grid.Row="1" Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" AutomationId="LblJourneyRemind" Text="{Binding [LblJourneyRemind_PersonalGoal], Source={x:Static localization:Translator.Instance}}" Margin="20,3,20,3"
+         HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" Style="{StaticResource LblPersonalGoal}"/>
+                <Grid Grid.Row="1" Margin="20,20,20,0" VerticalOptions="Start">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" AutomationId="LblEnableGoal" Text="{Binding [LblEnablePersonalGoal], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Start"  VerticalOptions="Center" FontAttributes="Bold" Style="{StaticResource LblPersonalGoal}"/>
+                    <Switch Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" IsToggled="{Binding IsGoalEnabled}" />
+                </Grid>
+                <StackLayout Grid.Row="2" Orientation="Vertical"  Margin="20,20,20,0"  >
+                    <Label AutomationId="LblSetPersonalGoal" Text="{Binding [LblSetPersonalGoal_PersonalGoal], Source={x:Static localization:Translator.Instance}}"
+                 HorizontalOptions="Start"  VerticalOptions="Center" FontAttributes="Bold" Style="{StaticResource LblPersonalGoal}"/>
+                    <Editor AutomationId="EdtPersonalGoal" HorizontalOptions="FillAndExpand" Margin="3" HeightRequest="60"
+                  Text="{Binding PersonalGoal}"  
+                  BackgroundColor="White" TextColor="{StaticResource DarkText}" IsEnabled="{Binding IsGoalEnabled}" >
+                    </Editor>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</views:BaseContentPage>

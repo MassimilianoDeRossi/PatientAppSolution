@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"                       
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             x:Class="PatientApp.Views.SettingsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Settings}"                       
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<controls:PageBackground Grid.RowSpan="2" ImageOpacity="1" ImageName="background01.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />-->
+        <controls:HeaderControl Grid.Row="0" Title="Settings page" />
+        <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" >
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="ApplicationInstanceId" TextColor="White" FontAttributes="Bold" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding ApplicationInstanceId}" TextColor="Yellow" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="SignCertificate" TextColor="White" FontAttributes="Bold" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding SignCertificate}" TextColor="Yellow" />
+        </StackLayout>
+        <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="Center" >
+            <Button Text="Schedule local notification" VerticalOptions="Start" HorizontalOptions="Center" 
+                Command="{Binding TestCommand}" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent"/>
+            <Button Text="Upload settings" VerticalOptions="Start" HorizontalOptions="Center" 
+                Command="{Binding SendSettingsCommand}" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent"/>
+            <Button Text="Reset application data" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding ResetAllCommand}" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent"/>
+        </StackLayout>
+
+    </Grid>
+</views:BaseContentPage>
+    

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:loc="clr-namespace:PatientApp.Localization"
+             x:Class="PatientApp.Views.LegalTermsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Home}">
+  <Grid >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" AutomationId="LblTitle" Text="{Binding [LegalTermsTitle], Source={x:Static loc:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource LblHeader}" />
+    <WebView Grid.Row="1" >
+      <WebView.Source>
+        <HtmlWebViewSource Html="{Binding LegalTermsAndPrivacyText}"/>
+      </WebView.Source>
+    </WebView>
+    <!--<controls:RoundedButton  Grid.Row="2" Margin="0,5,0,10" AutomationId="BtnAcceptLegalTerms" 
+                             Text="{Binding [BtnAcceptTerms], Source={x:Static loc:Translator.Instance}}"
+                             Command="{Binding AcceptTermsCommand}" />-->
+
+    <Button  Grid.Row="2" Margin="0,5,0,10" AutomationId="BtnAcceptLegalTerms" Style="{StaticResource RoundedButton}"
+                             Text="{Binding [BtnAcceptTerms], Source={x:Static loc:Translator.Instance}}"
+                             Command="{Binding AcceptTermsCommand}" />
+  </Grid>
+</views:BaseContentPage>

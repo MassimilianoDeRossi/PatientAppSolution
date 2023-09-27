@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientApp.Views;assembly=PatientApp"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls;assembly=PatientApp"
+             xmlns:local="clr-namespace:PatientApp;assembly=PatientApp"
+             xmlns:converters="clr-namespace:PatientApp.Converters;assembly=PatientApp"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             x:Class="PatientApp.Views.HowDoYouFeelPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=HowDoYouFeel}">
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+            <converters:LocalizationConverter x:Key="LocalizationConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [HowDoYouFeelTodayTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource DefaultBackgroundColor}">
+        </StackLayout>
+        <Image Grid.Row="2" Source="box_ombra" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-40,0,0"/>
+        <StackLayout Grid.Row="2" Padding="20" Margin="0,-40,0,0">
+            <!--<Image Source="mood_male.jpg" AutomationId="mood_male.jpg" VerticalOptions="Center" HorizontalOptions="Center" />-->
+            <ffimageloading:CachedImage Source="mood_male.jpg" AutomationId="mood_male.jpg" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+        <!--<Image x:Name="ImgSetMoodEmoticon" AutomationId="ImgSetMoodEmoticon" Grid.Row="2" Source="{Binding CurrentSelection.MoodIcon}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" Aspect="AspectFit" IsVisible="{Binding IsMoodSelected}" Margin="0,-40,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickOnEmoticonForSettingCommand}" />
+            </Image.GestureRecognizers>
+        </Image>-->
+        <ffimageloading:CachedImage x:Name="ImgSetMoodEmoticon" AutomationId="ImgSetMoodEmoticon" Grid.Row="2" Source="{Binding CurrentSelection.MoodIcon}" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" Aspect="AspectFit" IsVisible="{Binding IsMoodSelected}" Margin="0,-40,0,0">
+            <ffimageloading:CachedImage.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickOnEmoticonForSettingCommand}" />
+            </ffimageloading:CachedImage.GestureRecognizers>
+        </ffimageloading:CachedImage>
+        <!--<Image Grid.Row="2" Source="{Binding UnselectedIcon}" AutomationId="UnselectedIcon" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" Aspect="AspectFit" IsVisible="{Binding IsMoodSelected, Converter={StaticResource InverterConverter}}" Margin="0,-40,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+            Command="{Binding ClickOnEmoticonForSettingCommand}" />
+            </Image.GestureRecognizers>
+        </Image>-->
+        <ffimageloading:CachedImage Grid.Row="2" Source="{Binding UnselectedIcon}" AutomationId="UnselectedIcon" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="70" Aspect="AspectFit" IsVisible="{Binding IsMoodSelected, Converter={StaticResource InverterConverter}}" Margin="0,-40,0,0">
+            <ffimageloading:CachedImage.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClickOnEmoticonForSettingCommand}" />
+            </ffimageloading:CachedImage.GestureRecognizers>
+        </ffimageloading:CachedImage>
+        <Label Grid.Row="2" AutomationId="LblMood" Text="{Binding CurrentSelection.MoodLabel, Converter={StaticResource LocalizationConverter}}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource LblMoodStyleSelected}" Margin="0,50,0,0" IsVisible="{Binding IsMoodSelected}"/>
+        <Grid Grid.Row="3" Padding="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" AutomationId="LblClickOnEmoticons" Text="{Binding [LblClickOnEmoticonsForSetting_HowDoYouFeel], Source={x:Static localization:Translator.Instance}}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource LblMoodStyle}" Margin="0,-20,0,0"/>
+            <Label Grid.Row="1" AutomationId="LblMoodText" Text="{Binding CurrentSelection.MoodText, Converter={StaticResource LocalizationConverter}}" IsVisible="{Binding IsMoodSelected}" HorizontalOptions="Center" HorizontalTextAlignment="Center" Style="{StaticResource LblBlue}"/>
+            <StackLayout Grid.Row="2"></StackLayout>
+            <Label Grid.Row="3" AutomationId="LblGeneralMessage" VerticalOptions="Start" Text="{Binding [LblGeneralMessage_HowDoYouFeel], Source={x:Static localization:Translator.Instance}}"/>
+            <StackLayout Grid.Row="4"></StackLayout>
+            <Label Grid.Row="5" AutomationId="LblDontGiveUp" Text="{Binding [LblDontGiveUp_HowDoYouFeel], Source={x:Static localization:Translator.Instance}}" VerticalOptions="Start"/>
+            <Label AutomationId="LblPersonalGoal" Style="{StaticResource LblSemiBold}" Grid.Row="6" Text="{Binding PersonalGoal}" VerticalOptions="End" IsVisible="{Binding IsPersonalGoalEnabled}"/>
+        </Grid>
+    </Grid>
+</views:BaseContentPage>

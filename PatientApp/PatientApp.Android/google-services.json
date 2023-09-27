@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "684481718831",
+    "firebase_url": "https://api-8724789260917795397-918000.firebaseio.com",
+    "project_id": "api-8724789260917795397-918000",
+    "storage_bucket": "api-8724789260917795397-918000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684481718831:android:d8bc2591a9629f49",
+        "android_client_info": {
+          "package_name": "com.orthofix.myhexplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684481718831-kdtdtb7h5fpnjqn2glvg28o4a3vk6u2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgawxry-pYNukQ3zJh-Yl_mhXKcvgrYbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684481718831-kdtdtb7h5fpnjqn2glvg28o4a3vk6u2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684481718831:android:89c5192f41777d95de74da",
+        "android_client_info": {
+          "package_name": "com.orthofix.myhexplan.on"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684481718831-kdtdtb7h5fpnjqn2glvg28o4a3vk6u2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgawxry-pYNukQ3zJh-Yl_mhXKcvgrYbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "684481718831-kdtdtb7h5fpnjqn2glvg28o4a3vk6u2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

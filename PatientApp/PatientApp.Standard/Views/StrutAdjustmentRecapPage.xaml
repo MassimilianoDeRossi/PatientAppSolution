@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"                       
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:behaviors="clr-namespace:Xam.Behaviors;assembly=Xam.Behaviors"
+             xmlns:converters="clr-namespace:PatientApp.Converters"
+                       x:Class="PatientApp.Views.StrutAdjustmentRecapPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=StrutAdjustment}"
+             >
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblStrutAdjustmentWizardTitle], Source={x:Static localization:Translator.Instance}}" />
+        <BoxView Grid.Row="1" BackgroundColor="{StaticResource DefaultBackgroundColor}" HeightRequest="30" VerticalOptions="Start"/>
+        <Grid Grid.Row="1" Margin="0,-10,0,0" VerticalOptions="Start" HorizontalOptions="Center" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="box_ombra" VerticalOptions="Start" HorizontalOptions="Center" Aspect="AspectFill" />
+            <Image Grid.Row="0" Source="Orthofix_logo" AutomationId="Orthofix_logo" VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFill" Margin="0,-15,0,0"/>
+            <Label Grid.Row="1" Text="{Binding [LblStrutAdjustmentHelpVideo], Source={x:Static localization:Translator.Instance}}" TextColor="{StaticResource BlueOrthofix}"
+                     HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                     VerticalOptions="End" VerticalTextAlignment="Center" Margin="0,-20,0,0" />
+        </Grid>
+        <Image Source="play" Grid.Row="1" Margin="0,-30,0,0" HorizontalOptions="Center" VerticalOptions="Center" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PlayVideoCommand}" />
+            </Image.GestureRecognizers>
+        </Image>
+        <Grid Grid.Row="2" Padding="0" RowSpacing="0" ColumnSpacing="0" Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="#F0F0F0"  >
+            </BoxView>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" AutomationId="LbPrescriptionTitle" 
+                   Text="{Binding [LblStrutAdjustmentRecapTitle], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblTitleStyle}" 
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0" AutomationId="LbFrameId" Text="{Binding [LblFrameId], Source={x:Static localization:Translator.Instance}}"  
+                   HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="1" AutomationId="LbStrutSite" Text="{Binding [LblStrutSite], Source={x:Static localization:Translator.Instance}}"  
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="2" AutomationId="LbStrutToBeDone" Text="{Binding [LblStrutToBeDone], Source={x:Static localization:Translator.Instance}}" 
+                   HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="DarkGray" VerticalOptions="End" />
+            <controls:CustomListView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding PrescriptionRecap}" 
+                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"                      
+                      SelectedItem="{Binding SelectedPrescription, Mode=TwoWay}"  HasUnevenRows="True" SeparatorVisibility="None"
+                      >
+                <behaviors:Interaction.Behaviors>
+                    <behaviors:BehaviorCollection>
+                        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding OpenDetailCommand}"/>
+                    </behaviors:BehaviorCollection>
+                </behaviors:Interaction.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell AutomationId="LblPrescriptionFrameID">
+                            <ViewCell.View>
+                                <Grid ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="20" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" AutomationId="LblFrameIdValue" Text="{Binding FrameID}" 
+                                           HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                                           VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource LblTitleStyle}" />
+                                    <Label Grid.Column="1" AutomationId="LblSiteValue" Text="{Binding Site}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" 
+                                           VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+                                    <Image Grid.Column="2" Source="strut_done" IsVisible="{Binding AllDone}" Margin="10"
+                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFit" HeightRequest="40" />
+                                    <Image Grid.Column="2" Source="strut_alert" IsVisible="{Binding AllDone, Converter={StaticResource InverterConverter}}" Margin="10"
+                                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="AspectFit" HeightRequest="40" />
+                                    <Label AutomationId="LblBadgeCount" Grid.Column="2" Text="{Binding BadgeCount}" IsVisible="{Binding AllDone, Converter={StaticResource InverterConverter}}" 
+                                           Style="{StaticResource LblBadge}"
+                                           VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" 
+                                           />
+                                    <BoxView HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="End" HorizontalOptions="FillAndExpand"
+                                              BackgroundColor="DarkGray" />
+                                    <Image Grid.Column="3" Source="ico_details" HeightRequest="20" AutomationId="ImgOpenDetail" Margin="0,0,5,0"
+                                           IsVisible="{Binding AllDone, Converter={StaticResource InverterConverter}}" />
+
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:CustomListView>
+        </Grid>
+        <ActivityIndicator Grid.Row="0" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                           Color="White" IsRunning="True" IsVisible="{Binding IsBusy}" />
+
+    </Grid>
+</views:BaseContentPage>

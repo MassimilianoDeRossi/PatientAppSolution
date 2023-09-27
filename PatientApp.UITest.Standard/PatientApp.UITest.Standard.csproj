@@ -1,0 +1,195 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PatientApp.UITest</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnitTestAdapter" Version="2.3.0" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="1.1.1" />
+    <PackageReference Include="Xamarin.UITest" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PatientApp\PatientApp.Android\PatientApp.Android.csproj" />
+    <ProjectReference Include="..\PatientApp\PatientApp.Standard\PatientApp.Standard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\AllPatientsDailyTasks_item_3783.feature.cs">
+      <DependentUpon>AllPatientsDailyTasks_item_3783.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\AllTextMyHEXPlanApp.feature.cs">
+      <DependentUpon>AllTextMyHEXPlanApp.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\FirstAccessAsAnonymousUser_item_3778.feature.cs">
+      <DependentUpon>FirstAccessAsAnonymousUser_item_3778.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\FirstAccessByPrescriptionActivation_item_3779.feature.cs">
+      <DependentUpon>FirstAccessByPrescriptionActivation_item_3779.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\MyContacts_item_4948.feature.cs">
+      <DependentUpon>MyContacts_item_4948.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\PinSiteCare_item_3710.feature.cs">
+      <DependentUpon>PinSiteCare_item_3710.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\SelfTestSurvey_item_3793.feature.cs">
+      <DependentUpon>SelfTestSurvey_item_3793.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\SetUserProfileAnonymous_item_3776.feature.cs">
+      <DependentUpon>SetUserProfileAnonymous_item_3776.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\SetUserProfileNormal_item_4196.feature.cs">
+      <DependentUpon>SetUserProfileNormal_item_4196.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\ShoppingList_item_3700.feature.cs">
+      <DependentUpon>ShoppingList_item_3700.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\StrutAdjustmentConfirmation_item_3795.feature.cs">
+      <DependentUpon>StrutAdjustmentConfirmation_item_3795.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Features\StrutAdjustmentReminder_item_3788.feature.cs">
+      <DependentUpon>StrutAdjustmentReminder_item_3788.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\BackdoorAndroid.Designer.cs">
+      <DependentUpon>BackdoorAndroid.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\BackdoorIOS.Designer.cs">
+      <DependentUpon>BackdoorIOS.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\Config.Designer.cs">
+      <DependentUpon>Config.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\ElementAndroid.Designer.cs">
+      <DependentUpon>ElementAndroid.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\ElementIOS.Designer.cs">
+      <DependentUpon>ElementIOS.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\TextForTesting.Designer.cs">
+      <DependentUpon>TextForTesting.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\BackdoorAndroid.resx">
+      <LastGenOutput>BackdoorAndroid.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\BackdoorIOS.resx">
+      <LastGenOutput>BackdoorIOS.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Config.resx">
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ElementAndroid.resx">
+      <LastGenOutput>ElementAndroid.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ElementIOS.resx">
+      <LastGenOutput>ElementIOS.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\TextForTesting.resx">
+      <LastGenOutput>TextForTesting.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Features\AllPatientsDailyTasks_item_3783.feature">
+      <LastGenOutput>AllPatientsDailyTasks_item_3783.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\AllTextMyHEXPlanApp.feature">
+      <LastGenOutput>AllTextMyHEXPlanApp.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\FirstAccessAsAnonymousUser_item_3778.feature">
+      <LastGenOutput>FirstAccessAsAnonymousUser_item_3778.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\FirstAccessByPrescriptionActivation_item_3779.feature">
+      <LastGenOutput>FirstAccessByPrescriptionActivation_item_3779.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\MyContacts_item_4948.feature">
+      <LastGenOutput>MyContacts_item_4948.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\PinSiteCare_item_3710.feature">
+      <LastGenOutput>PinSiteCare_item_3710.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\SelfTestSurvey_item_3793.feature">
+      <LastGenOutput>SelfTestSurvey_item_3793.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\SetUserProfileAnonymous_item_3776.feature">
+      <LastGenOutput>SetUserProfileAnonymous_item_3776.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\SetUserProfileNormal_item_4196.feature">
+      <LastGenOutput>SetUserProfileNormal_item_4196.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\ShoppingList_item_3700.feature">
+      <LastGenOutput>ShoppingList_item_3700.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\StrutAdjustmentConfirmation_item_3795.feature">
+      <LastGenOutput>StrutAdjustmentConfirmation_item_3795.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Update="Features\StrutAdjustmentReminder_item_3788.feature">
+      <LastGenOutput>StrutAdjustmentReminder_item_3788.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:converters="clr-namespace:PatientApp.Converters"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.MyDiaryPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=MyDiary}">
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblMyDiaryTitle], Source={x:Static localization:Translator.Instance}}" />
+
+        <controls:LabelDatePickerControl Grid.Row="1" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="250" Margin="0,20,0,0"
+                                         MaximumDate="{Binding TodayDate}" MaximumDateDisplayText="{Binding [LblToday], Source={x:Static localization:Translator.Instance}}" 
+                                         SelectedDate="{Binding CurrentDate}" DisplayFormat="MMMM dd"/>
+
+        <Grid Grid.Row="2" RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="{StaticResource LightGrey}" Margin="0,-25,0,0" />
+            <Label Grid.Row="0" Grid.Column="1" Text="{localization:TranslateUpper LblMyDailyTasks}" HorizontalOptions="Center" VerticalOptions="End" Style="{StaticResource LblTitleBlueStyle}" />
+
+            <controls:CustomListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" 
+                                     ItemsSource="{Binding DiaryItems}" IsVisible="{Binding HasItems}"
+                                     BackgroundColor="{StaticResource LightGrey}" HasUnevenRows="True" SeparatorVisibility="None"
+                                     VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="10,10,10,0"
+                                     >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:CustomTransparentViewCell AutomationId="VcDiaryItem" >
+                            <controls:CustomTransparentViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="10" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label AutomationId="LblDiaryItemTime" Grid.Column="0" Style="{StaticResource LblMyDiaryListItemAlternate}" Text="{Binding Time}" HorizontalTextAlignment="Start" VerticalOptions="Start" 
+                                                VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                    <Label AutomationId="LblDiaryItemDescription" Grid.Column="1" Style="{StaticResource LblMyDiaryListItem}" Text="{Binding Description}" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand" 
+                                                VerticalTextAlignment="Start" HorizontalOptions="Start"  />
+                                    <!--<StackLayout Orientation="Vertical" Grid.Column="2" VerticalOptions="Start" >
+                                        <Label AutomationId="LblDiaryItemFrameId" Style="{StaticResource LblMyDiaryListItem}" Text="{Binding FrameId}" HorizontalTextAlignment="End" VerticalOptions="Start" 
+                                                VerticalTextAlignment="Center" HorizontalOptions="End" />
+                                        <Label AutomationId="LblDiaryItemExpectedDateTime" Style="{StaticResource LblMyDiaryListItem}" Text="{Binding ExpectedDateTime}" HorizontalTextAlignment="End" VerticalOptions="Start" 
+                                                VerticalTextAlignment="Center" HorizontalOptions="End" />
+                                    </StackLayout>-->
+
+                                </Grid>
+                            </controls:CustomTransparentViewCell.View>
+                        </controls:CustomTransparentViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </controls:CustomListView>
+
+            <Label Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Start" HorizontalTextAlignment="Center" Margin="10,30,10,0" 
+                   Text="{Binding [LblEmptyDiary], Source={x:Static localization:Translator.Instance}}" IsVisible="{Binding HasItems, Converter={StaticResource InverterConverter}}" 
+                   Style="{StaticResource LblSubTitleStyle}" 
+                   />
+
+            <Grid Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="50" RowSpacing="0" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="2" Source="ico_today" HeightRequest="50"  />
+                <Label Grid.Row="0" Text="{Binding CurrentDateDayName}" HorizontalOptions="Center" VerticalOptions="End" FontSize="12" />
+                <Label Grid.Row="1" Text="{Binding CurrentDateDayNumber}" HorizontalOptions="Center" VerticalOptions="End" FontSize="20" FontAttributes="Bold" />
+            </Grid>
+        </Grid>
+
+    </Grid>
+</views:BaseContentPage>

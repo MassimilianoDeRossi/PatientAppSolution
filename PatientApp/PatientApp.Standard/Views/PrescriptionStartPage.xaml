@@ -1,0 +1,53 @@
+﻿<views:BaseContentPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.PrescriptionStartPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Prescription}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <!--<controls:PageBackground Grid.RowSpan="2" ImageOpacity="1" ImageName="background01.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />-->
+    <controls:HeaderControl Grid.Row="0" Title="{Binding [LblPrescriptionStartTitle], Source={x:Static localization:Translator.Instance}}" />
+    <Grid Grid.Row="1" RowSpacing="0"  Margin="0,0,0,30"  >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Label  x:Name="LblWithPrescription" AutomationId="LblWithPrescription" Grid.Row="0" Style="{StaticResource LblNotesInvStyle}" Margin="50,0,50,0"  
+             Text="{Binding [LblWithPrescriptionInfo_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" 
+             VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+      <Image Grid.Row="1" Source="scan" Aspect="AspectFit" HeightRequest="80" HorizontalOptions="Center"/>
+      <!--<controls:RoundedButton x:Name="BtnScanCode" AutomationId="BtnScanCode" Grid.Row="2" Text="{Binding [BtnScanCode_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" 
+                               Command="{Binding ScanCommand}" />-->
+      <Button x:Name="BtnScanCode" AutomationId="BtnScanCode" Grid.Row="2" Text="{Binding [BtnScanCode_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" 
+              Style="{StaticResource RoundedButton}" Command="{Binding ScanCommand}" />
+            <Label x:Name="LblNoPrescription" AutomationId="LblNoPrescription" Grid.Row="3" Style="{StaticResource LblNotesInvStyle}" Margin="50,0,50,0" 
+             Text="{Binding [LblNoPrescriptionInfo_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" 
+             VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+      <Image Grid.Row="4" Source="skipscan" Aspect="AspectFit" HeightRequest="80" HorizontalOptions="Center"  />
+      <!--<controls:RoundedButton  x:Name="BtnWithoutPrescription" AutomationId="BtnWithoutPrescription" Grid.Row="5" Margin="0,-4,0,0" 
+                               Text="{Binding [BtnNoPrescriptionInfo_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" Command="{Binding SkipScanCommand}" />-->
+    <Button  x:Name="BtnWithoutPrescription" AutomationId="BtnWithoutPrescription" Grid.Row="5" Margin="0,-4,0,0" 
+                        Style="{StaticResource RoundedButton}"
+                        Text="{Binding [BtnNoPrescriptionInfo_PrescriptionStart], Source={x:Static localization:Translator.Instance}}" Command="{Binding SkipScanCommand}" />
+
+        </Grid>
+    <!--<Label Grid.Row="1" Text="?" FontSize="30" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,15,0"
+            Style="{StaticResource LblTitleInvStyle}" >
+      <Label.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding ShowHelpCommand}" />
+      </Label.GestureRecognizers>
+    </Label>-->
+    <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Color="White" IsRunning="True" IsVisible="{Binding IsBusy}" />
+  </Grid>
+</views:BaseContentPage>

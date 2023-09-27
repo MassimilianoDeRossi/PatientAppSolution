@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             x:Class="PatientApp.Views.Controls.LabelDatePickerControl"             
+             RowSpacing="0" >
+
+    
+    <DatePicker x:Name="dpInternal" IsVisible="False" />
+    <!--<controls:RoundedButton x:Name="btnOpenPicker" Text="" FontSize="18" HorizontalOptions="FillAndExpand" Clicked="btnOpenPicker_Clicked" />-->
+    <Button x:Name="btnOpenPicker" Text="" FontSize="18" HorizontalOptions="FillAndExpand" Clicked="btnOpenPicker_Clicked" Style="{StaticResource RoundedButton}"/>
+    <Image Source="datepicker" HorizontalOptions="End" Margin="0,0,20,0" VerticalOptions="Center" HeightRequest="25" />
+</Grid>

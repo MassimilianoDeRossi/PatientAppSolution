@@ -1,0 +1,4 @@
+
+keystore pwd: ofixIp@d11
+alias: myhexplandroid
+alias pwd: ofixIp@d11

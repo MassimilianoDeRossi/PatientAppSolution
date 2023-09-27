@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:views="clr-namespace:PatientApp.Views"
+                       x:Class="PatientApp.Views.SignsOfInfectionPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=PinSiteCare}">
+
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblSignsOfInfection], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <StackLayout Grid.Row="1">
+        </StackLayout>
+        <!--<Image Source="ico_share"  Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" Margin="0,0,12,0">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer NumberOfTapsRequired="1"
+    Command="{Binding ShareImageCommand}" />
+      </Image.GestureRecognizers>
+    </Image>-->
+        <Label Grid.Row="2" Text="{Binding [LblImgTitleSignsOfInfection], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblSubTitleStyle}" Margin="5,0,0,0" />
+        <Image Grid.Row="3" Source="{Binding ProfileImagePath, Mode=TwoWay}"
+                         Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        <Grid Grid.Row="4">
+            <!--<Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>-->
+            <!--<controls:RoundedButton AutomationId="BtnSendImage"
+                             Text="{Binding [BtnSendImage_SignsOfInfection], Source={x:Static localization:Translator.Instance}}"                             
+                             Margin="0,0,0,20" Command="{Binding ShareImageCommand}" DisabledColor="Blue"/>-->
+            <Button AutomationId="BtnSendImage" Style="{StaticResource RoundedButton}"
+                        Text="{Binding [BtnSendImage_SignsOfInfection], Source={x:Static localization:Translator.Instance}}"                             
+                        Margin="0,0,0,20" Command="{Binding ShareImageCommand}" />
+
+        </Grid>
+    </Grid>
+
+</views:BaseContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+             x:Class="PatientApp.Views.Controls.BigDateBackground"  
+      RowSpacing="0" ColumnSpacing="0">
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="Auto" />
+    <ColumnDefinition Width="*" />
+  </Grid.ColumnDefinitions>
+    <Label x:Name="LblDay" AutomationId="LblDay" Text="24" HorizontalOptions="End"  HorizontalTextAlignment="End" VerticalOptions="Center" Style="{StaticResource LblDay}"/>
+  <BoxView Grid.Column="1" WidthRequest="1" Color="White" Margin="5,0,5,0" HorizontalOptions="Center" VerticalOptions="FillAndExpand"  />
+  <StackLayout Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" Spacing="0" Padding="0">
+        <Label x:Name="LblMonth"  AutomationId="LblMonth" Text="NOV" VerticalOptions="End" Style="{StaticResource LblMonth}"/>
+        <Label x:Name="LblDayOfWeek"  AutomationId="LblDayOfWeek" Text="Wednesday" VerticalOptions="Start" Style="{StaticResource LblDayOfWeek}"/>
+  </StackLayout>
+</Grid>

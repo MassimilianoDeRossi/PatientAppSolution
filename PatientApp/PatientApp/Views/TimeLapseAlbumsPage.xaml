@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"                          
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             xmlns:converters="clr-namespace:PatientApp.Converters"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             x:Class="PatientApp.Views.TimeLapseAlbumsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=TimeLapse}"
+             >
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+            <converters:BoolToFloatConverter x:Key="BoolToOpacityConverter" TrueValue="0.3" FalseValue="1" />
+            <converters:NotNullConverter x:Key="NotNullConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid RowSpacing="0" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblMyTimeLapseTitle], Source={x:Static localization:Translator.Instance}}" 
+                                Padding="0" AutomationId="LblTitle" />
+        <Grid Grid.Row="0" IsVisible="{Binding HasAlbums}" HorizontalOptions="End" Margin="0,0,5,0">
+            <Button Grid.Row="0" Text="{Binding [BtnBeginEdit], Source={x:Static localization:Translator.Instance}}" BackgroundColor="Transparent" TextColor="White" 
+                HorizontalOptions="End" VerticalOptions="Center"
+                IsVisible="{Binding IsInEditMode, Converter={StaticResource InverterConverter}}"
+                Command="{Binding BeginEditModeCommand}" />
+            <Button Grid.Row="0" Text="{Binding [BtnEndEdit], Source={x:Static localization:Translator.Instance}}" BackgroundColor="Transparent" TextColor="White" 
+                HorizontalOptions="End" VerticalOptions="Center"
+                IsVisible="{Binding IsInEditMode}"
+                Command="{Binding EndEditModeCommand}" />
+        </Grid>
+
+        <flv:FlowListView Grid.Row="1" FlowColumnCount="3" FlowItemsSource="{Binding Albums}" IsVisible="{Binding HasAlbums}"
+                          SeparatorVisibility="None" HasUnevenRows="True"
+	                      FlowItemTappedCommand="{Binding AlbumSelectedCommand}" 
+                          FlowLastTappedItem="{Binding SelectedAlbum}"           
+                          Margin="10,10,10,5"
+                          >
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <Grid Margin="10" RowSpacing="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image Source="album" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" 
+                               WidthRequest="100" HeightRequest="100" Margin="2" BackgroundColor="LightGray"
+                               />
+                                            
+                        <Image Grid.Row="0" Source="{Binding PreviewImagePath}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" 
+                               WidthRequest="100" HeightRequest="100" Margin="2" />
+                        
+                        <Image Grid.Row="0" Source="delete" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,5,5" 
+                               BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=TimeLapse}"
+                               IsVisible="{Binding IsInEditMode}" HeightRequest="20" Aspect="AspectFit"/>
+
+                        <Label Grid.Row="1" Text="{Binding AlbumName}" HorizontalOptions="Start" VerticalOptions="Start" Style="{StaticResource LblSubTitleStyle}" Margin="5,0,0,0" />
+                        <Label Grid.Row="2" Text="{Binding ImagesCount}" HorizontalOptions="Start" VerticalOptions="Start" Margin="5,0,0,0"/>
+
+                    </Grid>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+
+        </flv:FlowListView>
+
+        <Grid Grid.Row="1" IsVisible="{Binding HasAlbums, Converter={StaticResource InverterConverter}}" RowSpacing="0"
+              VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Orientation="Vertical">
+                <Image Source="noalbum" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150" />
+                <Label Text="{Binding [LblNoAlbums], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Start" />
+            </StackLayout>
+        </Grid>
+
+        <!--<controls:RoundedButton  Grid.Row="2" x:Name="BtnNewAlbumButton" AutomationId="BtnNewAlbumButton" Text="{Binding [BtnNewAlbum], Source={x:Static localization:Translator.Instance}}"                           
+                             HorizontalOptions="FillAndExpand"
+                             IsVisible="{Binding IsInEditMode, Converter={StaticResource InverterConverter}}"
+                             Margin="20,5,20,20" Command="{Binding CreateAlbumCommand}" DisabledColor="Blue"/>-->
+
+        <Button  Grid.Row="2" x:Name="BtnNewAlbumButton" AutomationId="BtnNewAlbumButton" 
+                            Style="{StaticResource RoundedButton}"
+                            Text="{Binding [BtnNewAlbum], Source={x:Static localization:Translator.Instance}}"
+                            HorizontalOptions="FillAndExpand"
+                            IsVisible="{Binding IsInEditMode, Converter={StaticResource InverterConverter}}"
+                            Margin="20,5,20,20" Command="{Binding CreateAlbumCommand}" />
+
+        <ActivityIndicator Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Center" VerticalOptions="Center" 
+                           Color="White" IsRunning="True" IsVisible="{Binding IsBusy}" />
+
+
+    </Grid>
+</views:BaseContentPage>
+    

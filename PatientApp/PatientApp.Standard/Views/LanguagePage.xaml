@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+              xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             xmlns:converters="clr-namespace:PatientApp.Converters"
+             xmlns:behaviors="clr-namespace:Xam.Behaviors;assembly=Xam.Behaviors"
+             x:Class="PatientApp.Views.LanguagePage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Settings}">
+    <views:BaseContentPage.Resources>
+        <converters:InverterConverter x:Key="InverterConverter" />
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblSelectLanguageTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <ListView Grid.Row="1" Margin="0,20,0,0" ItemsSource="{Binding Languages, Mode=TwoWay}" SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}"  >
+            <ListView.Effects>
+                <local:NoScrollListViewEffect></local:NoScrollListViewEffect>
+            </ListView.Effects>
+            <behaviors:Interaction.Behaviors>
+                <behaviors:BehaviorCollection>
+                    <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding SetLanguageCommand}" />
+                </behaviors:BehaviorCollection>
+            </behaviors:Interaction.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="{Binding IconName}" WidthRequest="40" VerticalOptions="Center" Margin="10,0,10,0" />
+                            <Label Grid.Column="1" Text="{Binding Name}" VerticalOptions="Center"/>
+                            <Image Grid.Column="2" Source="ico_checkon.png" HeightRequest="20" VerticalOptions="Center" Margin="0,0,20,0" IsVisible="{Binding IsSelected}" />
+                            <Image Grid.Column="2" Source="ico_checkoff.png" HeightRequest="20" VerticalOptions="Center" Margin="0,0,20,0" IsVisible="{Binding IsSelected, Converter={StaticResource InverterConverter}}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</views:BaseContentPage>

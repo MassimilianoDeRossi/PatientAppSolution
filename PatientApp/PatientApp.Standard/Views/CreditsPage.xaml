@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+              xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             x:Class="PatientApp.Views.CreditsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Settings}">
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblCreditsTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <Grid Grid.Row="1" Margin="0,20,0,0" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="{Binding [LblCredits_Credits], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" Style="{StaticResource LblCredits}"/>
+            <Label Grid.Row="1" Text="{Binding [LblLimbHealingLink_Credits], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" Style="{StaticResource LblCreditsBlue}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenLinkCommand}" CommandParameter="{Binding [LblLimbHealingLink_Credits], Source={x:Static localization:Translator.Instance}}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Text="{Binding [LblOrthofixLink_Credits], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" Style="{StaticResource LblCreditsBlue}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenLinkCommand}" CommandParameter="{Binding [LblOrthofixLink_Credits], Source={x:Static localization:Translator.Instance}}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Image Grid.Row="3" Source="Orthofix_logo" AutomationId="Orthofix_logo" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TestModeCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Grid.Row="4" Text="{Binding BundleVersion}" HorizontalOptions="Center" Style="{StaticResource LblCredits}" Margin="0,20,0,0"/>
+        </Grid>
+        <Label Grid.Row="1" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,20" Text="TEST MODE ON" IsVisible="{Binding IsTestMode}" TextColor="DarkBlue" />
+    </Grid>
+</views:BaseContentPage>

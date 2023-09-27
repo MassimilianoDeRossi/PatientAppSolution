@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+    xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+    xmlns:local="clr-namespace:PatientApp"
+    xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+    x:Class="PatientApp.Views.WizardWelcomeAnonymousTemplate"                          
+             BackgroundColor="Transparent">
+
+  <Grid VerticalOptions="Center" Margin="10,0,10,0" BackgroundColor="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="300" />
+      <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <BoxView Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+        <Label x:Name="LblTitle" AutomationId="LblTitle"  Grid.Row="0" Text="{Binding [LblTitle_WelcomeAnonymous], Source={x:Static localization:Translator.Instance}}"  Style="{StaticResource LblTitleStyle}" 
+           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="0,10,0,10"/>
+    <Image Grid.Row="1" Source="welcome_anonymous" AutomationId="welcome_anonymous" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" Margin="20" />
+
+    <controls:WizardButtonsControl Grid.Row="2" BackgroundColor="White" PrevButtonText="{Binding WizardPrevButtonText}" NextButtonText="{Binding WizardNextButtonText}"
+                                   BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=WizardUserSettings}" />
+    
+
+  </Grid>
+
+</ContentView>

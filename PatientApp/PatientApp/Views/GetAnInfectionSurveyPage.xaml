@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             xmlns:views="clr-namespace:PatientApp.Views"
+                       x:Class="PatientApp.Views.GetAnInfectionSurveyPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=PinSiteCare}">
+
+  <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="20" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="60" />
+    </Grid.RowDefinitions>
+
+    <controls:HeaderControl Grid.Row="0" Title="{Binding [LblGetAnInfection], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+    <StackLayout Grid.Row="1">
+    </StackLayout>
+    <Grid Grid.Row="2" RowSpacing="15" Padding="10" >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label Grid.Row="0" AutomationId="LblInfectionQuestionNum1" Grid.Column="0" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestionNum1], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="0" Grid.Column="1" AutomationId="LblInfectionQuestion1" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestion1], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="1" AutomationId="LblInfectionQuestionNum2" Grid.Column="0" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestionNum2], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="1" Grid.Column="1" AutomationId="LblInfectionQuestion2" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestion2], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="2" AutomationId="LblInfectionQuestionNum3" Grid.Column="0" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestionNum3], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="2" Grid.Column="1" AutomationId="LblInfectionQuestion3" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestion3], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="3" AutomationId="LblInfectionQuestionNum4" Grid.Column="0" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestionNum4], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="3" Grid.Column="1" AutomationId="LblInfectionQuestion4" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestion4], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="4" AutomationId="LblInfectionQuestionNum5" Grid.Column="0" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestionNum5], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label Grid.Row="4" Grid.Column="1" AutomationId="LblInfectionQuestion5" Text="{Binding [LblGetAnInfectionSurvey_InfectionQuestion5], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionList}"/>
+      <Label AutomationId="LblGeneralMessage"
+          Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+          Text="{Binding [LblGetAnInfectionSurvey_GeneralMessage], Source={x:Static localization:Translator.Instance}}"/>
+
+    </Grid>
+    <StackLayout Grid.Row="3"></StackLayout>
+    <Grid Grid.Row="4" VerticalOptions="FillAndExpand" Padding="0,0,0,5">
+      <BoxView HeightRequest="0.5"  Color="DarkGray" VerticalOptions="Start" />
+      <Label VerticalOptions="End" AutomationId="LblSendAPhoto"
+             Text="{Binding [LblGetAnInfectionSurvey_SendAPhoto], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblInfectionListTakePhoto}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+      <Image
+          Source="toolbar_camera" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,5,0,0"/>
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding TakeOrPickAPhotoCommand}" />
+      </Grid.GestureRecognizers>
+    </Grid>
+  </Grid>
+
+</views:BaseContentPage>

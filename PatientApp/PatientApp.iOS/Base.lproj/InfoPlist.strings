@@ -1,0 +1,3 @@
+﻿"CFBundleDisplayName" = "myHexPlan IT";
+"NSLocationAlwaysUsageDescription" = "myHexPlan needs to access your location";
+"NSLocationWhenInUseUsageDescription" = "myHexPlan needs to access your location";

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+    xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+    xmlns:local="clr-namespace:PatientApp"
+    xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+    x:Class="PatientApp.Views.WizardPinSiteCareTemplate"                          
+             BackgroundColor="Transparent">
+
+  <Grid VerticalOptions="Center" Margin="10,0,10,0" BackgroundColor="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="300" />
+      <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <BoxView Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+    <Label x:Name="LblTitle" AutomationId="LblTitle" Grid.Row="0" Text="{Binding [LblWizardPinSiteCareTitle], Source={x:Static localization:Translator.Instance}}"  Style="{StaticResource LblTitleStyle}" 
+           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="0,10,0,10"/>
+
+        <Grid Grid.Row="1" BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=WizardUserSettings}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+            <Label x:Name="LblDailyTimeInfo" AutomationId="LblDailyTimeInfo"  Grid.Row="0" Text="{Binding [LblSetTime_WizardPinSiteCare], Source={x:Static localization:Translator.Instance}}" Margin="20,3,20,3"
+             HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black" />
+
+      <Grid Grid.Row="1" Margin="20,20,20,0" VerticalOptions="Start">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+                <Label x:Name="LblSetDailyTime" AutomationId="LblSetDailyTime"  Grid.Column="0" Text="{Binding [LblSetDailyTime_WizardPinSiteCare], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Start"  VerticalOptions="Center"/>
+        <controls:CustomTimePicker AutomationId="TimePickerEntryDailyTime" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="100" HorizontalTextAlignment="End"
+                    Time="{Binding PinSiteCareTime, Mode=TwoWay}" />
+      </Grid>
+
+            <Label x:Name="LblPreferences" AutomationId="LblPreferences"  Grid.Row="2" Text="{Binding [LblPreferencesInfo_WizardPinSiteCare], Source={x:Static localization:Translator.Instance}}" Margin="50,3,50,3"
+             HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="DarkGray" />
+    </Grid>
+
+    <controls:WizardButtonsControl Grid.Row="2" BackgroundColor="White" PrevButtonText="{Binding WizardPrevButtonText}" NextButtonText="{Binding WizardNextButtonText}"
+                                   BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=WizardUserSettings}" />
+
+
+  </Grid>
+
+</ContentView>

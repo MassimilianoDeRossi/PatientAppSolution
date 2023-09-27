@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:local="clr-namespace:PatientApp;assembly=PatientApp.Standard"
+                 xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.CleaningSolutionInfoPopupPage"
+                 CloseWhenBackgroundIsClicked="True" HasSystemPadding="True"
+                 BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=ShoppingList}">
+  <!--Animations use example-->
+  <pages:PopupPage.Animation>
+    <animations:ScaleAnimation
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      HasBackgroundAnimation="True"
+      />
+  </pages:PopupPage.Animation>
+  <Grid BackgroundColor="White" VerticalOptions="CenterAndExpand"  RowSpacing="15" ColumnSpacing="0" HorizontalOptions="FillAndExpand" Margin="10,0,10,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="45" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Image Source="close" AutomationId="close" Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End" Margin="0,15,15,0">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer NumberOfTapsRequired="1"
+    Command="{Binding UserClosePopupCommand}" />
+      </Image.GestureRecognizers>
+    </Image>
+    <Grid Grid.Row="1" Grid.Column="0" RowSpacing="15" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="15,0,0,0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Label Style="{StaticResource LblHeaderBlack}"
+             Text="{Binding [LblTitle_CleaningSolutionInfoPopup], Source={x:Static localization:Translator.Instance}}"/>
+      <Label Grid.Row="1" Text="{Binding [LblDescription_CleaningSolutionInfoPopup], Source={x:Static localization:Translator.Instance}}"/>
+      <Label Grid.Row="2" Text="{Binding [LblAskSurgeon_CleaningSolutionInfoPopup], Source={x:Static localization:Translator.Instance}}"/>
+    </Grid>
+    <Image Source="img_cleansing" AutomationId="img_cleansing" Grid.Row="1" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"/>
+    <Grid 
+        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer NumberOfTapsRequired="1"
+          Command="{Binding UserClosePopupCommand}" />
+      </Grid.GestureRecognizers>
+      <BoxView VerticalOptions="Start" HeightRequest="0.5" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource MediumGrey}" Margin="0"/>
+      <Button x:Name="BtnClose" AutomationId="BtnClose" Text="{Binding [BtnClose], Source={x:Static localization:Translator.Instance}}" Command="{Binding UserClosePopupCommand}" VerticalOptions="Center"
+        Style="{StaticResource BtnBold}" HorizontalOptions="Center" Margin="0" BackgroundColor="Transparent" BorderColor="Transparent"/>
+    </Grid>
+  </Grid>
+
+</pages:PopupPage>

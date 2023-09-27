@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             x:Class="PatientApp.Views.StrutAdjustmentDetailPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=StrutAdjustment}"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl AutomationId="LblTitle" Grid.Row="0" Title="{Binding [LblStrutAdjustmentWizardTitle], Source={x:Static localization:Translator.Instance}}" />
+        <Grid Grid.Row="1" BackgroundColor="#ffffff" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="#F0F0F0"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition  Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" AutomationId="LblFrameId" Text="{Binding DetailTitle}" Style="{StaticResource LblSubTitleStyle}" 
+                   HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" Margin="10,0,0,0" />
+                <Label Grid.Column="1" AutomationId="LblDetailDateTime" Text="{Binding DetailDateTime}" Style="{StaticResource LblSubTitleStyle}" 
+                   HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" Margin="0,0,10,0"/>
+                <BoxView Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" HeightRequest="1" BackgroundColor="DarkGray" VerticalOptions="End" />
+            </Grid>
+            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10,0,10">
+            </StackLayout>
+            <Grid Grid.Row="1" Margin="10" ColumnSpacing="2" RowSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" AutomationId="LblStrAdjColHeader" Grid.Column="0" Text="{Binding [lblStrutAdjustmentStrut], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label Grid.Row="0" AutomationId="LblStrAdjClickColHeader" Grid.Column="1" Text="{Binding [lblStrutAdjustmentClick], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label Grid.Row="0" AutomationId="LblStrAdjLengthColHeader" Grid.Column="2" Text="{Binding [lblStrutAdjustmentLength], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label Grid.Row="0" AutomationId="LblStrutAdjustmentStrutColHeader" Grid.Column="3" Text="{Binding [lblStrutAdjustmentStrut], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label Grid.Row="0" AutomationId="LblStrutAdjustmentClickColHeader" Grid.Column="4" Text="{Binding [lblStrutAdjustmentClick], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label Grid.Row="0" AutomationId="LblStrutAdjustmentLengthColHeader" Grid.Column="5" Text="{Binding [lblStrutAdjustmentLength], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+
+                <Image Grid.Row="1" Grid.Column="0" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="1" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="2" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="3" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="4" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="4" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="1" Grid.Column="5" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="0" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="1" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="2" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="3" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="4" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="2" Grid.Column="5" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="0" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="1" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="2" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="3" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="4" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                <Image Grid.Row="3" Grid.Column="5" Source="bkg_strut_cell" AutomationId="bkg_strut_cell" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+
+                <Image Grid.Row="1" Grid.Column="0" Source="Exagon_strut_1" AutomationId="Exagon_strut_1" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="1" Grid.Column="0" Text="1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Image Grid.Row="2" Grid.Column="0" Source="Exagon_strut_2" AutomationId="Exagon_strut_2" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="2" Grid.Column="0" Text="2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Image Grid.Row="3" Grid.Column="0" Source="Exagon_strut_3" AutomationId="Exagon_strut_3" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="3" Grid.Column="0" Text="3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Image Grid.Row="1" Grid.Column="3" Source="Exagon_strut_4" AutomationId="Exagon_strut_4" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="1" Grid.Column="3" Text="4" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Image Grid.Row="2" Grid.Column="3" Source="Exagon_strut_5" AutomationId="Exagon_strut_5" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="2" Grid.Column="3" Text="5" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Image Grid.Row="3" Grid.Column="3" Source="Exagon_strut_6" AutomationId="Exagon_strut_6" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Label Grid.Row="3" Grid.Column="3" Text="6" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" />
+
+                <Label AutomationId="LblStr1Click" Grid.Row="1" Grid.Column="1" Text="{Binding SelectedAdjustment.Click1}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr2Click" Grid.Row="2" Grid.Column="1" Text="{Binding SelectedAdjustment.Click2}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr3Click" Grid.Row="3" Grid.Column="1" Text="{Binding SelectedAdjustment.Click3}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+
+                <Label AutomationId="LblStr1Length" Grid.Row="1" Grid.Column="2" Text="{Binding SelectedAdjustment.Length1}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr2Length" Grid.Row="2" Grid.Column="2" Text="{Binding SelectedAdjustment.Length2}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr3Length" Grid.Row="3" Grid.Column="2" Text="{Binding SelectedAdjustment.Length3}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+
+                <Label AutomationId="LblStr4Click" Grid.Row="1" Grid.Column="4" Text="{Binding SelectedAdjustment.Click4}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr5Click" Grid.Row="2" Grid.Column="4" Text="{Binding SelectedAdjustment.Click5}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr6Click" Grid.Row="3" Grid.Column="4" Text="{Binding SelectedAdjustment.Click6}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+
+                <Label AutomationId="LblStr4Length" Grid.Row="1" Grid.Column="5" Text="{Binding SelectedAdjustment.Length4}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr5Length" Grid.Row="2" Grid.Column="5" Text="{Binding SelectedAdjustment.Length5}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+                <Label AutomationId="LblStr6Length" Grid.Row="3" Grid.Column="5" Text="{Binding SelectedAdjustment.Length6}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+            </Grid>
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+              <Label Text="{Binding [LblStrutAdjRecapScreenWarnMessage], Source={x:Static localization:Translator.Instance}}" Margin="10,0,10,10"/>
+                <!--<controls:RoundedButton AutomationId="BtnStartAdjustment" Text="{Binding [BtnStartAdjustment], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="20,0,20,0" 
+                                    Command="{Binding StartWizardCommand}"/>-->
+                <!--<controls:RoundedButton AutomationId="BtnStartAdjustment" Style="{StaticResource RoundedButton}"
+                                    Text="{Binding [BtnStartAdjustment], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="20,0,20,0"
+                                    Command="{Binding StartWizardCommand}"/>-->
+                <Button AutomationId="BtnStartAdjustment" Style="{StaticResource RoundedButton}"
+                                    Text="{Binding [BtnStartAdjustment], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="20,0,20,0"
+                                    Command="{Binding StartWizardCommand}"/>
+                <Button AutomationId="BtnDoItLater" Text="{Binding [BtnDoItLater], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Center"
+                        BackgroundColor="Transparent" BorderColor="Transparent" TextColor="Black" Margin="0,5,0,0" 
+                        Command="{Binding PostponeCommand}"/>
+            </StackLayout>
+        </Grid>
+
+    </Grid>
+</views:BaseContentPage>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:converters="clr-namespace:PatientApp.Converters"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             x:Class="PatientApp.Views.TimeLapseImagesPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=TimeLapse}"
+             >
+  <views:BaseContentPage.Resources>
+    <ResourceDictionary>
+      <converters:InverterConverter x:Key="InverterConverter" />
+      <converters:BoolToFloatConverter x:Key="BoolToOpacityConverter" TrueValue="0.3" FalseValue="1" />
+      <converters:NotNullConverter x:Key="NotNullConverter" />
+    </ResourceDictionary>
+  </views:BaseContentPage.Resources>
+  <Grid RowSpacing="0" BackgroundColor="White" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+    <controls:HeaderControl Grid.Row="0" Title="{Binding SelectedAlbum.AlbumName}" Padding="0" AutomationId="LblTitle"  />
+    <Grid Grid.Row="0" IsVisible="{Binding CanEdit}" HorizontalOptions="End" Margin="0,0,5,0">
+      <Button Grid.Row="0" Text="{Binding [BtnBeginEdit], Source={x:Static localization:Translator.Instance}}" BackgroundColor="Transparent" TextColor="White" 
+                HorizontalOptions="End" VerticalOptions="CenterAndExpand" FontSize="18"
+                IsVisible="{Binding IsInEditMode, Converter={StaticResource InverterConverter}}"
+                Command="{Binding BeginEditModeCommand}" />
+      <Button Grid.Row="0" Text="{Binding [BtnEndEdit], Source={x:Static localization:Translator.Instance}}" BackgroundColor="Transparent" TextColor="White" 
+                HorizontalOptions="End" VerticalOptions="CenterAndExpand" FontSize="18"
+                IsVisible="{Binding IsInEditMode}"
+                Command="{Binding EndEditModeCommand}" />
+    </Grid>
+    <Grid Grid.Row="1" Margin="5,0,5,0" RowSpacing="0" >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="100" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Label Text="Last Photo" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center"
+                   IsVisible="{Binding HasLastPhoto}" Style="{StaticResource LblTitleStyle}"
+                   Margin="0,10,0,0" />
+      <Grid Grid.Row="1" Grid.Column="0" IsVisible="{Binding HasLastPhoto}" ColumnSpacing="0">
+        <Grid.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding LastPhotoTappedCommand}"/>
+        </Grid.GestureRecognizers>
+        <ffimageloading:CachedImage Source="{Binding LastTakenPhoto.ImagePath}" Aspect="AspectFit" 
+                                    HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" DownsampleToViewSize="True"                              
+                                    Opacity="{Binding LastTakenPhoto.IsSelected, Converter={StaticResource BoolToOpacityConverter}}" >
+          <ffimageloading:CachedImage.Transformations>
+            <fftransformations:CropTransformation CropWidthRatio="1" CropHeightRatio="1"/>
+          </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>
+        <Image Source="radio_check" HorizontalOptions="Start" VerticalOptions="End" Margin="0,0,5,5" 
+                               IsVisible="{Binding LastTakenPhoto.IsSelected}" HeightRequest="20" Aspect="AspectFit"/>
+      </Grid>
+      <Label Text="{Binding LastTakenPhoto.CreatedOnFormatted}" Grid.Row="2" Grid.Column="0" 
+                   HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"
+                   IsVisible="{Binding HasLastPhoto}" Margin="0,5,0,5" />
+
+      <Label Text="Video" Grid.Row="0" Grid.Column="2" Margin="5,10,0,0" Style="{StaticResource LblTitleStyle}"
+                   IsVisible="{Binding SelectedAlbum.HasBuiltVideo}"
+                   HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center" VerticalTextAlignment="Center" />
+
+      <Grid Grid.Row="1" Grid.Column="2" IsVisible="{Binding SelectedAlbum.HasBuiltVideo}">
+        <Image Source="video_placeholder" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" 
+                               
+                               Opacity="{Binding VideoPreviewPhoto.IsSelected, Converter={StaticResource BoolToOpacityConverter}}" >
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding VideoPreviewTappedCommand}"/>
+          </Image.GestureRecognizers>
+        </Image>
+        <Image Source="radio_check" HorizontalOptions="Start" VerticalOptions="End" Margin="0,0,5,5" 
+                               IsVisible="{Binding VideoPreviewPhoto.IsSelected}" HeightRequest="20" Aspect="AspectFit"/>
+      </Grid>
+      <Label Text="{Binding SelectedAlbum.VideoCreatedOnFormatted}" Grid.Row="2" Grid.Column="2"
+                   HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"
+                   IsVisible="{Binding SelectedAlbum.HasBuiltVideo}" Margin="0,5,0,5" />
+    </Grid>
+
+    <Grid Grid.Row="0" Grid.RowSpan="3" IsVisible="{Binding HasImages, Converter={StaticResource InverterConverter}}" RowSpacing="0"
+              VerticalOptions="Center" HorizontalOptions="Center">
+      <StackLayout Orientation="Vertical">
+        <Image Source="noimages" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150" />
+        <Label Text="{Binding [LblNoAlbumImages], Source={x:Static localization:Translator.Instance}}" HorizontalOptions="Center" VerticalOptions="Start" />
+      </StackLayout>
+    </Grid>
+
+    <flv:FlowListView Grid.Row="2" IsVisible="{Binding HasImages}" 
+                          FlowColumnCount="3" FlowItemsSource="{Binding Images}" 
+                          SeparatorVisibility="None" HasUnevenRows="True"
+	                      FlowItemTappedCommand="{Binding ImageTappedCommand}" 
+                          FlowLastTappedItem="{Binding SelectedImage}"
+                          FlowTappedBackgroundColor="Red" 
+                          >
+      <flv:FlowListView.FlowColumnTemplate>
+        <DataTemplate>
+          <Grid >
+            <Image Source="{Binding ImagePath}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill" 
+                               HeightRequest="100" Margin="2" 
+                               Opacity="{Binding IsSelected, Converter={StaticResource BoolToOpacityConverter}}" />
+            <Image Source="radio_check" HorizontalOptions="Start" VerticalOptions="End" Margin="0,0,5,5" 
+                               IsVisible="{Binding IsSelected}" HeightRequest="20" Aspect="AspectFit"/>
+          </Grid>
+        </DataTemplate>
+      </flv:FlowListView.FlowColumnTemplate>
+
+    </flv:FlowListView>
+    <Grid Grid.Row="3" IsVisible="{Binding IsBusy, Converter={StaticResource InverterConverter}}" Padding="10"  BackgroundColor="#FF333333">
+      <Grid IsVisible="{Binding IsInEditMode}" >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Image="time_lapse_share" HorizontalOptions="Start" VerticalOptions="Center" Margin="15,0,0,0" TextColor="White" 
+                    Command="{Binding ShareCommand}" BackgroundColor="Transparent" BorderColor="Transparent"/>
+        <Button Grid.Column="2" Image="time_lapse_delete" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,15,0" TextColor="White" 
+                    Command="{Binding DeleteCommand}" BackgroundColor="Transparent" BorderColor="Transparent"/>
+      </Grid>
+      <Grid IsVisible="{Binding IsInEditMode, Converter={StaticResource InverterConverter}}" >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Image="time_lapse_build" VerticalOptions="Center" HorizontalOptions="Start" Margin="15,0,0,0"
+                Command="{Binding BuildVideoCommand}" BackgroundColor="Transparent" BorderColor="Transparent"                     
+                    IsVisible="{Binding CanBuild}" />
+        <Button Grid.Column="1" Image="timelapse_take_photo" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding TakePhotoCommand}" BackgroundColor="Transparent" BorderColor="Transparent"
+                    IsVisible="{Binding IsBusy, Converter={StaticResource InverterConverter}}"/>
+      </Grid>
+    </Grid>
+    <Grid Grid.Row="3" IsVisible="{Binding IsBusy}" Padding="10" BackgroundColor="#FF333333" >
+      <Label Text="{Binding BuildStatus}" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" 
+               TextColor="White" 
+               IsVisible="{Binding IsBusy}"
+               />
+    </Grid>
+
+    <ActivityIndicator Grid.Row="0" Grid.RowSpan="4" HorizontalOptions="Center" VerticalOptions="Center" 
+                           Color="White" IsRunning="True" IsVisible="{Binding IsBusy}" />
+
+
+  </Grid>
+</views:BaseContentPage>
+    

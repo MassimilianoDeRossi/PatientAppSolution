@@ -1,0 +1,991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlertAlreadyRegisteredDeviceNo_PrescriptionViewModel" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="AlertAlreadyRegisteredDeviceYes_PrescriptionViewModel" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="AlertAlreadyRegisteredDevice_PrescriptionViewModel" xml:space="preserve">
+    <value>Cette ordonnance est déjà publiée sur un autre smartphone. Vous êtes sûr de vouloir publier l'ordonnance sur ce smartphone ? (L'accès à l'ordonnance à partir du smartphone précédent sera désactivé)</value>
+  </data>
+  <data name="AlertConfirmDeleteAlbum" xml:space="preserve">
+    <value>Confirmer la suppression de l'album {0} ?</value>
+  </data>
+  <data name="AlertConfirmSkipPrescriptionWizard" xml:space="preserve">
+    <value>Si vous quittez, les données ne seront pas sauvegardées. Voulez-vous continuer ?</value>
+  </data>
+  <data name="AlertConfirmSkipPrescriptionWizardNo" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="AlertConfirmSkipPrescriptionWizardYes" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="AlertDeviceIntegrityCheckFailedMessage" xml:space="preserve">
+    <value>Ce dispositif semble avoir été jailbreaké. Il existe des risques inhérents aux appareils jailbreakés.
+Pour utiliser myHEXplan, utilisez un dispositif avec un système d'exploitation intact.</value>
+  </data>
+  <data name="AlertDeviceIntegrityCheckFailedTitle" xml:space="preserve">
+    <value>Device Integrity Check</value>
+  </data>
+  <data name="AlertDeviceRegistrationCancelled" xml:space="preserve">
+    <value>L'ordonnance reste publiée sur un autre smartphone</value>
+  </data>
+  <data name="AlertMsgTitle_PrescriptionViewModel" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="AlertSkipPreviousStruts" xml:space="preserve">
+    <value>Les rappels d'ajustement des vérins télescopiques commencent aujourd'hui ; les ajustements passés des vérins télescopiques ne s'afficheront pas. Veillez à respecter les délais en vérifiant votre ordonnance papier et, en cas de doute, contactez votre chirurgien.</value>
+  </data>
+  <data name="AlertTimeLapseBuild" xml:space="preserve">
+    <value>Voulez-vous créer votre vidéo ?</value>
+  </data>
+  <data name="AlertTimeLapseDeleteImages" xml:space="preserve">
+    <value>Confirmer la suppression des images sélectionnées ?</value>
+  </data>
+  <data name="AlertTimeLapseMinPhoto" xml:space="preserve">
+    <value>Au moins trois images sont nécessaires pour la création d'une vidéo de photos accélérées</value>
+  </data>
+  <data name="AlertTimeLapseRebuild" xml:space="preserve">
+    <value>Voulez-vous recréer votre vidéo ?</value>
+  </data>
+  <data name="AllMyDailyTasksTitle" xml:space="preserve">
+    <value>Toutes mes tâches quotidiennes</value>
+  </data>
+  <data name="AllMyDailyTask_MoodSelfDesc" xml:space="preserve">
+    <value>Auto-évaluation de l'humeur</value>
+  </data>
+  <data name="AllMyDailyTask_PinSiteCareDesc" xml:space="preserve">
+    <value>Soin de l'emplacement des broches</value>
+  </data>
+  <data name="AllMyDailyTask_StrutAdjDesc" xml:space="preserve">
+    <value>ID du fixateur d'ajustement des vérins télescopiques</value>
+  </data>
+  <data name="Ankle" xml:space="preserve">
+    <value>Cheville</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>myHEXplan™</value>
+  </data>
+  <data name="BtnAcceptTerms" xml:space="preserve">
+    <value>J'accepte</value>
+  </data>
+  <data name="BtnAllMyDailyTasks" xml:space="preserve">
+    <value>Toutes mes tâches quotidiennes</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="BtnBeginEdit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="BtnCancel_PinSiteCareViewModel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="BtnCancel_SelectMoodPopup" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="BtnClose" xml:space="preserve">
+    <value>Fermé</value>
+  </data>
+  <data name="BtnConfirmPostpone" xml:space="preserve">
+    <value>Confirmer le report ?</value>
+  </data>
+  <data name="BtnConfirmThisMood_SelectMoodPopup" xml:space="preserve">
+    <value>Confirmer cette humeur</value>
+  </data>
+  <data name="BtnDoItLater" xml:space="preserve">
+    <value>Plus tard</value>
+  </data>
+  <data name="BtnDone" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="BtnDone_HowDoYouFeel" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="BtnEndEdit" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="BtnHowDoYouFeelToday" xml:space="preserve">
+    <value>Comment vous sentez-vous aujourd'hui ?</value>
+  </data>
+  <data name="BtnNewAlbum" xml:space="preserve">
+    <value>Nouvel album</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="BtnNoPrescriptionInfo_PrescriptionStart" xml:space="preserve">
+    <value>Sans ordonnance</value>
+  </data>
+  <data name="BtnOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BtnSaveInsightMessages" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="BtnSavePersonalGoal" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="BtnSavePinSiteCare" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="BtnScanCode_PrescriptionStart" xml:space="preserve">
+    <value>Scanner votre code QR</value>
+  </data>
+  <data name="BtnSendImage_SignsOfInfection" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="BtnStartAdjustment" xml:space="preserve">
+    <value>Début</value>
+  </data>
+  <data name="BtnTapHereToAdd_Home" xml:space="preserve">
+    <value>Appuyer ici pour ajouter une ordonnance</value>
+  </data>
+  <data name="BtnTapHereToStart_Home" xml:space="preserve">
+    <value>Appuyez ici pour commencer</value>
+  </data>
+  <data name="BtnTurnLight" xml:space="preserve">
+    <value>Allumer/éteindre la lumière</value>
+  </data>
+  <data name="DeviceActivationFailedError" xml:space="preserve">
+    <value>L'activation de l'appareil a échoué (code : SYN01)</value>
+  </data>
+  <data name="DeviceActivationFailedRetryError" xml:space="preserve">
+    <value>L'activation de l'appareil a échoué. Veuillez réessayer (code : CON03)</value>
+  </data>
+  <data name="DownloadedPrescriptionPrefix" xml:space="preserve">
+    <value>Ordonnances téléchargées : </value>
+  </data>
+  <data name="ErrorCannotPlaceCall" xml:space="preserve">
+    <value>Numéro de téléphone invalide</value>
+  </data>
+  <data name="ErrorCannotSendSms" xml:space="preserve">
+    <value>Numéro de téléphone invalide</value>
+  </data>
+  <data name="ErrorConnectionMissing" xml:space="preserve">
+    <value>Connexion réseau non disponible. Veuillez vérifier les paramètres de votre appareil (code : CON01)</value>
+  </data>
+  <data name="ErrorDuplicateAlbumName" xml:space="preserve">
+    <value>Le nom de l'album existe déjà</value>
+  </data>
+  <data name="ErrorEmptyAlbumName" xml:space="preserve">
+    <value>Veuillez saisir un nom d'album</value>
+  </data>
+  <data name="ErrorLoggedOut" xml:space="preserve">
+    <value>L'ordonnance a été publiée sur un autre smartphone et n'est plus disponible sur celui-ci</value>
+  </data>
+  <data name="ErrorModeSaving" xml:space="preserve">
+    <value>Impossible d'enregistrer l'humeur. Veuillez réessayer.</value>
+  </data>
+  <data name="ErrorPersonalGoalRequired" xml:space="preserve">
+    <value>Saisissez un objectif personnel ou désactivez la fonction</value>
+  </data>
+  <data name="ErrorPrescriptionGeneric" xml:space="preserve">
+    <value>Le téléchargement des données d'ordonnance a échoué (code : SYN02)</value>
+  </data>
+  <data name="ErrorPrescriptionInvalidQrCodeContent" xml:space="preserve">
+    <value>Le code QR peut ne pas provenir de myHEXplan (code : QRE01)</value>
+  </data>
+  <data name="ErrorPrescriptionInvalidSignedPackage" xml:space="preserve">
+    <value>La mise à jour de l'ordonnance a échoué (code : SYN03)</value>
+  </data>
+  <data name="ErrorPrescriptionInvalidSignedQrCode" xml:space="preserve">
+    <value>La signature du code QR est peut-être invalide (code : QRE02)</value>
+  </data>
+  <data name="ErrorPrescriptionLogin" xml:space="preserve">
+    <value>L'activation de l'application a échoué. Veuillez réessayer (code : CON02)</value>
+  </data>
+  <data name="ErrorPrescriptionScanTitle" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="Femur" xml:space="preserve">
+    <value>Fémur</value>
+  </data>
+  <data name="ForeFoot" xml:space="preserve">
+    <value>Avant-pied</value>
+  </data>
+  <data name="FormatTodayIFeel" xml:space="preserve">
+    <value>Aujourd'hui, je me sens {0}</value>
+  </data>
+  <data name="HindFoot" xml:space="preserve">
+    <value>Arrière-pied</value>
+  </data>
+  <data name="HowDoYouFeelTodayTitle" xml:space="preserve">
+    <value>Comment vous sentez-vous aujourd'hui ?</value>
+  </data>
+  <data name="LANGUAGE_NAME" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="LblAddedStatusMyPrescriptionPrefix" xml:space="preserve">
+    <value>Ajouté</value>
+  </data>
+  <data name="LblAddYourPhoto_PinSiteCare" xml:space="preserve">
+    <value>Ajouter votre photo</value>
+  </data>
+  <data name="LblAddYourPhoto_WizardUserProfile" xml:space="preserve">
+    <value>Ajouter votre photo</value>
+  </data>
+  <data name="LblAskSurgeon_CleaningSolutionInfoPopup" xml:space="preserve">
+    <value>En cas de doute, demandez à votre chirurgien.</value>
+  </data>
+  <data name="LblBack_ButtonsControl" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="LblChangeYourPhoto_WizardUserProfile" xml:space="preserve">
+    <value>Changer votre photo</value>
+  </data>
+  <data name="LblClickOnEmoticonsForSetting_HowDoYouFeel" xml:space="preserve">
+    <value>Cliquer sur les émoticônes pour régler</value>
+  </data>
+  <data name="LblContactInfo" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="LblCreateAlbumHint" xml:space="preserve">
+    <value>Saisir le nom de l'album</value>
+  </data>
+  <data name="LblCreateAlbumTitle" xml:space="preserve">
+    <value>Nouvel album </value>
+  </data>
+  <data name="LblCreditsTitle" xml:space="preserve">
+    <value>Crédits</value>
+  </data>
+  <data name="LblCredits_Credits" xml:space="preserve">
+    <value>©2023 Copyright Orthofix</value>
+  </data>
+  <data name="LblCredits_UserSettings" xml:space="preserve">
+    <value>Crédits</value>
+  </data>
+  <data name="LblDescription_CleaningSolutionInfoPopup" xml:space="preserve">
+    <value>N'UTILISEZ PAS de détergents contenant des ions fluorure, chlorure, bromure, iodure ou hydroxyde.</value>
+  </data>
+  <data name="LblDonePinSiteCare" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="LblDoneTitle_AllMyDailyTasks" xml:space="preserve">
+    <value>Fait</value>
+  </data>
+  <data name="LblDontGiveUp_HowDoYouFeel" xml:space="preserve">
+    <value>N'abandonnez pas !</value>
+  </data>
+  <data name="LblEmptyDiary" xml:space="preserve">
+    <value>Mon journal enregistrera au jour le jour vos activités liées au réglage des vérins télescopiques, soins à apporter à l'emplacement de la broche et aux messages d'information.</value>
+  </data>
+  <data name="LblEnablePersonalGoal" xml:space="preserve">
+    <value>Activer un objectif personnel</value>
+  </data>
+  <data name="LblEnable_InsightMessages" xml:space="preserve">
+    <value>Activer les messages</value>
+  </data>
+  <data name="LblEnterNickname" xml:space="preserve">
+    <value>Saisir un nouveau pseudonyme</value>
+  </data>
+  <data name="LblErrorMessage_ErrorMessagePopup" xml:space="preserve">
+    <value>Il s'agit d'un message d'erreur affiché dans l'application mobile myHEXplan.</value>
+  </data>
+  <data name="LblFrameId" xml:space="preserve">
+    <value>ID du fixateur</value>
+  </data>
+  <data name="LblGeneralInfo_InsightMessages" xml:space="preserve">
+    <value>myHEXplan, votre compagnon de voyage, vous donnera des informations sur votre traitement. Réglez l'heure, à votre convenance, pour la réception des messages d'information.</value>
+  </data>
+  <data name="LblGeneralInfo_WizardInsightMessages" xml:space="preserve">
+    <value>myHEXplan, votre compagnon de voyage, vous donnera des informations sur votre traitement. Réglez l'heure, à votre convenance, pour la réception des messages d'information.</value>
+  </data>
+  <data name="LblGeneralMessage_HowDoYouFeel" xml:space="preserve">
+    <value>La santé mentale est aussi importante que la santé physique. Pensez positif ! Vous ne porterez ce dispositif que pendant une courte période de votre vie</value>
+  </data>
+  <data name="LblGetAnInfection" xml:space="preserve">
+    <value>Suis-je atteint d'une infection ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_GeneralMessage" xml:space="preserve">
+    <value>Si vous présentez l'un de ces symptômes ou si vous avez un doute concernant la procédure de soin cutané autour des fiches et des broches, prenez immédiatement contact avec le cabinet de votre chirurgien.</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestion1" xml:space="preserve">
+    <value>Observez-vous des rougeurs à l'emplacement d'insertion des fiches ou des broches ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestion2" xml:space="preserve">
+    <value>Observez-vous un gonflement à l'emplacement d'insertion des fiches ou des broches ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestion3" xml:space="preserve">
+    <value>Observez-vous des sécrétions épaisses ou colorées à l'emplacement de la fiche ou de la broche ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestion4" xml:space="preserve">
+    <value>Observez-vous un desserrage ou un mouvement de la fiche ou de la broche ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestion5" xml:space="preserve">
+    <value>Ressentez-vous une douleur ou une irritation persistante au niveau du site d'insertion des fiches ou des broches ?</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestionNum1" xml:space="preserve">
+    <value>1)</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestionNum2" xml:space="preserve">
+    <value>2)</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestionNum3" xml:space="preserve">
+    <value>3)</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestionNum4" xml:space="preserve">
+    <value>4)</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_InfectionQuestionNum5" xml:space="preserve">
+    <value>5)</value>
+  </data>
+  <data name="LblGetAnInfectionSurvey_SendAPhoto" xml:space="preserve">
+    <value>Envoyer une photo</value>
+  </data>
+  <data name="LblHaveYouDonePinSiteCare" xml:space="preserve">
+    <value>Avez-vous fait le nettoyage prévu de l'emplacement des fiches ou des broches ?</value>
+  </data>
+  <data name="LblImgTitleSignsOfInfection" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblInfoMessage_WizardWelcomeLogged" xml:space="preserve">
+    <value>myHEXplan vous fournit des informations tout au long de votre traitement, avec des rappels utiles en appui aux informations orales et écrites fournies par votre chirurgien</value>
+  </data>
+  <data name="LblInfoPref_WizardWelcomeLogged" xml:space="preserve">
+    <value>Les préférences suivantes peuvent être définies à tout moment à partir de l'écran Paramètres.</value>
+  </data>
+  <data name="LblInsightMessageTitle" xml:space="preserve">
+    <value>Messages d'information</value>
+  </data>
+  <data name="LblInsightsMessages_UserSettings" xml:space="preserve">
+    <value>Messages d'information</value>
+  </data>
+  <data name="LblJourneyRemind_PersonalGoal" xml:space="preserve">
+    <value>Vous ne porterez ce dispositif que pendant une courte période de votre vie : rappelez-vous des raisons qui vous ont amené à commencer ce parcours de traitement.</value>
+  </data>
+  <data name="LblJourneyRemind_WizardPersonalGoal" xml:space="preserve">
+    <value>Vous ne porterez ce dispositif que pendant une courte période de votre vie : rappelez-vous des raisons qui vous ont amené à commencer ce parcours de traitement.</value>
+  </data>
+  <data name="LblLanguage_UserSettings" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="LblLastSyncDateFailed" xml:space="preserve">
+    <value>Échec</value>
+  </data>
+  <data name="LblLastSyncDateMyPrescriptionPrefix" xml:space="preserve">
+    <value>Dernière mise à jour :</value>
+  </data>
+  <data name="LblLastSyncDatePending" xml:space="preserve">
+    <value>Votre ordonnance n'est pas mise à jour. Veuillez activer une connexion de données afin de continuer à suivre l'ordonnance sur l'Application</value>
+  </data>
+  <data name="LblLegalNotice_UserSettings" xml:space="preserve">
+    <value>MENTIONS LÉGALES</value>
+  </data>
+  <data name="LblLimbHealingLink_Credits" xml:space="preserve">
+    <value>www.limbhealing.com</value>
+  </data>
+  <data name="LblLoading" xml:space="preserve">
+    <value>(chargement...)</value>
+  </data>
+  <data name="LblMaybeLaterPinSiteCare" xml:space="preserve">
+    <value>Peut-être plus tard</value>
+  </data>
+  <data name="LblMessage" xml:space="preserve">
+    <value>Msg.</value>
+  </data>
+  <data name="LblMessagePinSiteCareDone" xml:space="preserve">
+    <value>Soin de l'emplacement des broches effectué</value>
+  </data>
+  <data name="LblMobile" xml:space="preserve">
+    <value>Téléphone mobile</value>
+  </data>
+  <data name="LblMoodAnnoyedEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😠</value>
+  </data>
+  <data name="LblMoodAnnoyedText_HowDoYouFeel" xml:space="preserve">
+    <value>Tout va bien, la longueur du traitement peut être frustrante. Ce dispositif est seulement temporaire. Rappelez-vous l'objectif final du traitement. Votre équipe est là pour vous aider à atteindre cet objectif.</value>
+  </data>
+  <data name="LblMoodAnnoyed_HowDoYouFeel" xml:space="preserve">
+    <value>Frustré(e)</value>
+  </data>
+  <data name="LblMoodBoredEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😕</value>
+  </data>
+  <data name="LblMoodBoredText_HowDoYouFeel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblMoodBored_HowDoYouFeel" xml:space="preserve">
+    <value>Je m'ennuie</value>
+  </data>
+  <data name="LblMoodCalmEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😌</value>
+  </data>
+  <data name="LblMoodCalmText_HowDoYouFeel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblMoodCalm_HowDoYouFeel" xml:space="preserve">
+    <value>Calme</value>
+  </data>
+  <data name="LblMoodExcitedEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😃</value>
+  </data>
+  <data name="LblMoodExcitedText_HowDoYouFeel" xml:space="preserve">
+    <value>Vous faites un excellent travail ; la récompense n'est pas loin.</value>
+  </data>
+  <data name="LblMoodExcited_HowDoYouFeel" xml:space="preserve">
+    <value>Motivé(e)</value>
+  </data>
+  <data name="LblMoodHappyEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>🙂</value>
+  </data>
+  <data name="LblMoodHappyText_HowDoYouFeel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblMoodHappy_HowDoYouFeel" xml:space="preserve">
+    <value>Content(e)</value>
+  </data>
+  <data name="LblMoodNervousEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😖</value>
+  </data>
+  <data name="LblMoodNervousText_HowDoYouFeel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LblMoodNervous_HowDoYouFeel" xml:space="preserve">
+    <value>Nerveux/nerveuse</value>
+  </data>
+  <data name="LblMoodNeutralEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😐</value>
+  </data>
+  <data name="LblMoodNeutralText_HowDoYouFeel" xml:space="preserve">
+    <value>Passez une bonne journée et ne négligez pas votre traitement.</value>
+  </data>
+  <data name="LblMoodNeutral_HowDoYouFeel" xml:space="preserve">
+    <value>Je vais bien</value>
+  </data>
+  <data name="LblMoodSadEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>😟</value>
+  </data>
+  <data name="LblMoodSadText_HowDoYouFeel" xml:space="preserve">
+    <value>Vous avez peut-être eu une dure journée aujourd'hui ? Essayez de faire quelque chose qui vous plaît et de suivre votre traitement habituel.</value>
+  </data>
+  <data name="LblMoodSad_HowDoYouFeel" xml:space="preserve">
+    <value>Triste</value>
+  </data>
+  <data name="LblMoodSatisfiedEmoji_HowDoYouFeel" xml:space="preserve">
+    <value>☺</value>
+  </data>
+  <data name="LblMoodSatisfiedText_HowDoYouFeel" xml:space="preserve">
+    <value>Optimiste - Votre rôle dans le traitement est très important. Cette journée vous a rapproché de votre objectif final.</value>
+  </data>
+  <data name="LblMoodSatisfied_HowDoYouFeel" xml:space="preserve">
+    <value>Optimiste</value>
+  </data>
+  <data name="LblMoodSelfAssessmentActivityDone" xml:space="preserve">
+    <value>Auto-évaluation de l'humeur</value>
+  </data>
+  <data name="LblMotivationalMessageRead" xml:space="preserve">
+    <value>Message d'information lu</value>
+  </data>
+  <data name="LblMyDailyTasks" xml:space="preserve">
+    <value>Mes tâches quotidiennes</value>
+  </data>
+  <data name="LblMyDiaryTitle" xml:space="preserve">
+    <value>Mon journal</value>
+  </data>
+  <data name="LblMyPrescriptionsConsolidationLegend" xml:space="preserve">
+    <value>Consolidation</value>
+  </data>
+  <data name="LblMyPrescriptionsCorrectionLegend" xml:space="preserve">
+    <value>Correction</value>
+  </data>
+  <data name="LblMyPrescriptionsFrameID" xml:space="preserve">
+    <value>ID du fixateur</value>
+  </data>
+  <data name="LblMyPrescriptionsLatencyLegend" xml:space="preserve">
+    <value>Latence</value>
+  </data>
+  <data name="LblMyPrescriptionsStatus" xml:space="preserve">
+    <value>Dernière action</value>
+  </data>
+  <data name="LblMyPrescriptionsTitle" xml:space="preserve">
+    <value>Mes ordonnances</value>
+  </data>
+  <data name="LblMyTimeLapseTitle" xml:space="preserve">
+    <value>Ma chronologie</value>
+  </data>
+  <data name="LblNext_ButtonsControl" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="LblNickname" xml:space="preserve">
+    <value>Surnom</value>
+  </data>
+  <data name="LblNoAlbumImages" xml:space="preserve">
+    <value>Aucune image trouvée</value>
+  </data>
+  <data name="LblNoAlbums" xml:space="preserve">
+    <value>Aucun album trouvé</value>
+  </data>
+  <data name="LblNoPrescriptionInfo_PrescriptionStart" xml:space="preserve">
+    <value>Si vous avez été traité avec un dispositif de fixation externe générique ou si vous n'avez pas reçu d'ordonnance avec code QR, commencez votre traitement sans ordonnance numérique.</value>
+  </data>
+  <data name="LblOffice" xml:space="preserve">
+    <value>Cabinet</value>
+  </data>
+  <data name="LblOrthofixLink_Credits" xml:space="preserve">
+    <value>www.orthofix.com</value>
+  </data>
+  <data name="LblOutOfDate" xml:space="preserve">
+    <value>Veuillez vous connecter à Internet pour vérifier les mises à jour</value>
+  </data>
+  <data name="LblPersonalGoalTitle" xml:space="preserve">
+    <value>Objectif personnel</value>
+  </data>
+  <data name="LblPersonalGoal_UserSettings" xml:space="preserve">
+    <value>Objectif personnel</value>
+  </data>
+  <data name="LblPhone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="LblPickPhoto" xml:space="preserve">
+    <value>Sélectionner dans la galerie</value>
+  </data>
+  <data name="LblPickPhoto_PinSiteCare_Message" xml:space="preserve">
+    <value>Pas de galerie de photos disponible</value>
+  </data>
+  <data name="LblPickPhoto_PinSiteCare_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LblPickPhoto_PinSiteCare_Title" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="LblPickPhoto_PrescriptionViewModel_Message" xml:space="preserve">
+    <value>Pas de galerie de photos disponible</value>
+  </data>
+  <data name="LblPickPhoto_PrescriptionViewModel_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LblPickPhoto_PrescriptionViewModel_Title" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="LblPinSiteCareHelpVideo" xml:space="preserve">
+    <value>Appuyez sur « Play » pour démarrer le tutoriel vidéo</value>
+  </data>
+  <data name="LblPinSiteCareTitle" xml:space="preserve">
+    <value>Soin de l'emplacement des broches</value>
+  </data>
+  <data name="LblPinSiteCare_HelpInfectionLink" xml:space="preserve">
+    <value>Comment reconnaître une infection ?</value>
+  </data>
+  <data name="LblPinSiteCare_HelpInfectionText" xml:space="preserve">
+    <value>Il est essentiel de traiter votre fixateur externe avec soin et de maintenir les sites d’insertion des fiches propres et secs pour prévenir les infections.</value>
+  </data>
+  <data name="LblPinSiteCare_HelpListLink" xml:space="preserve">
+    <value>De quoi ai-je besoin ?</value>
+  </data>
+  <data name="LblPinSiteCare_HelpListText" xml:space="preserve">
+    <value>Avant de commencer, assurez-vous que vous avez tout ce qu'il faut pour le nettoyage de l'emplacement des broches</value>
+  </data>
+  <data name="LblPinSiteCare_HelpVideoText" xml:space="preserve">
+    <value>Cette vidéo revient sur toutes les étapes importantes de l'entretien de l'emplacement des broches. Elle est destinée à des fins éducatives uniquement. En cas de doute, contactez votre chirurgien.</value>
+  </data>
+  <data name="LblPinSiteCare_UserSettings" xml:space="preserve">
+    <value>Horaires d'entretien de l'emplacement des broches</value>
+  </data>
+  <data name="LblPreferencesInfo_WizardInsightMessages" xml:space="preserve">
+    <value>Les préférences suivantes peuvent être définies à tout moment à partir de l'écran Paramètres.</value>
+  </data>
+  <data name="LblPreferencesInfo_WizardPinSiteCare" xml:space="preserve">
+    <value>Les préférences suivantes peuvent être définies à tout moment à partir de l'écran Paramètres.</value>
+  </data>
+  <data name="LblPreferencesInfo_WizardUserProfile" xml:space="preserve">
+    <value>Les préférences suivantes peuvent être définies à tout moment à partir de l'écran Paramètres.</value>
+  </data>
+  <data name="LblPreferences_WizardPersonalGoal" xml:space="preserve">
+    <value>Les préférences suivantes peuvent être définies à tout moment à partir de l'écran Paramètres.</value>
+  </data>
+  <data name="LblPrescriptionStartTitle" xml:space="preserve">
+    <value>Commencer votre traitement</value>
+  </data>
+  <data name="LblPrivacyLegalTerms_UserSettings" xml:space="preserve">
+    <value>Conditions juridiques et confidentialité</value>
+  </data>
+  <data name="LblRevokedStatusMyPrescriptionPrefix" xml:space="preserve">
+    <value>ID du fixateur</value>
+  </data>
+  <data name="LblRevokedStatusMyPrescriptionSuffix" xml:space="preserve">
+    <value>a été retiré</value>
+  </data>
+  <data name="LblScanHintMessage" xml:space="preserve">
+    <value>Conservez le code QR imprimé sur votre ordonnance papier</value>
+  </data>
+  <data name="LblScanTitle" xml:space="preserve">
+    <value>Scan du code QR de l'ordonnance</value>
+  </data>
+  <data name="LblSelectLanguageTitle" xml:space="preserve">
+    <value>Sélectionner une langue</value>
+  </data>
+  <data name="LblSendFeedback_SendAppFeedback" xml:space="preserve">
+    <value>Envoyer des commentaires</value>
+  </data>
+  <data name="LblSendFeedback_UserSettings" xml:space="preserve">
+    <value>Envoyer des commentaires à propos de myHEXplan</value>
+  </data>
+  <data name="LblSetDailyTime_InsightMessages" xml:space="preserve">
+    <value>Régler l'heure des alertes</value>
+  </data>
+  <data name="LblSetDailyTime_PinSiteCareTime" xml:space="preserve">
+    <value>Régler l'heure des alertes</value>
+  </data>
+  <data name="LblSetDailyTime_WizardInsightMessages" xml:space="preserve">
+    <value>Régler l'heure des alertes</value>
+  </data>
+  <data name="LblSetDailyTime_WizardPinSiteCare" xml:space="preserve">
+    <value>Régler l'heure des alertes</value>
+  </data>
+  <data name="LblSetPersonalGoal_PersonalGoal" xml:space="preserve">
+    <value>Définir votre objectif personnel</value>
+  </data>
+  <data name="LblSetPersonalGoal_WizardPersonalGoal" xml:space="preserve">
+    <value>Définir votre objectif personnel</value>
+  </data>
+  <data name="LblSetTime_PinSiteCareSettings" xml:space="preserve">
+    <value>Régler l'heure, à votre convenance, pour la réception des notifications d'alerte de soin de l'emplacement des broches.</value>
+  </data>
+  <data name="LblSetTime_WizardPinSiteCare" xml:space="preserve">
+    <value>Régler l'heure, à votre convenance, pour la réception des notifications d'alerte de soin de l'emplacement des broches.</value>
+  </data>
+  <data name="LblShoppingList_GeneralMessage" xml:space="preserve">
+    <value>Avez-vous tout ce qu'il vous faut pour le nettoyage de l'emplacement des broches ? Cocher les cases en regard des articles manquants et partager la liste sous forme de mémo.</value>
+  </data>
+  <data name="LblSignsOfInfection" xml:space="preserve">
+    <value>Symptômes d'infection</value>
+  </data>
+  <data name="LblSkip_PrescriptionCarousel" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="LblStrutAdjRecapScreenWarnMessage" xml:space="preserve">
+    <value>Cet ajustement n'est complet que lorsque les six ajustements des vérins télescopiques ont été confirmés en cliquant sur « Fait » à la dernière étape</value>
+  </data>
+  <data name="LblStrutAdjSampleText" xml:space="preserve">
+    <value>Lorsque vous commencez votre ordonnance, les réglages de vos vérins télescopiques s'affichent ici.  Veuillez regarder la vidéo ci-dessus pour en savoir plus sur la manière dont les réglages des vérins télescopiques sont effectués.</value>
+  </data>
+  <data name="LblStrutAdjustment" xml:space="preserve">
+    <value>Ajustement des vérins télescopiques</value>
+  </data>
+  <data name="lblStrutAdjustmentClick" xml:space="preserve">
+    <value>Clics</value>
+  </data>
+  <data name="lblStrutAdjustmentDirection" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="LblStrutAdjustmentDone" xml:space="preserve">
+    <value>Réglage des vérins télescopiques terminé</value>
+  </data>
+  <data name="LblStrutAdjustmentHelpVideo" xml:space="preserve">
+    <value>Appuyez sur « Play » pour démarrer le tutoriel vidéo</value>
+  </data>
+  <data name="lblStrutAdjustmentLength" xml:space="preserve">
+    <value>Longueur</value>
+  </data>
+  <data name="LblStrutAdjustmentPostponed" xml:space="preserve">
+    <value>Report de l'ajustement des vérins télescopiques</value>
+  </data>
+  <data name="LblStrutAdjustmentRecapTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStrutAdjustmentStrut" xml:space="preserve">
+    <value>Vérin télescopique</value>
+  </data>
+  <data name="LblStrutAdjustmentWizardTitle" xml:space="preserve">
+    <value>Ajustement des vérins télescopiques</value>
+  </data>
+  <data name="LblStrutSite" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="LblStrutToBeDone" xml:space="preserve">
+    <value>À faire</value>
+  </data>
+  <data name="LblSupportTitle" xml:space="preserve">
+    <value>Support </value>
+  </data>
+  <data name="LblSupport_Home" xml:space="preserve">
+    <value>Support myHEXplan &gt;</value>
+  </data>
+  <data name="LblTakePhoto" xml:space="preserve">
+    <value>Prendre une nouvelle photo</value>
+  </data>
+  <data name="LblTakePhoto_PinSiteCare_Message" xml:space="preserve">
+    <value>Pas de caméra disponible. Veuillez vérifier les paramètres de l'appareil</value>
+  </data>
+  <data name="LblTakePhoto_PinSiteCare_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LblTakePhoto_PinSiteCare_Title" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="LblTakePhoto_PrescriptionViewModel_Message" xml:space="preserve">
+    <value>Pas de caméra disponible. Veuillez vérifier les paramètres de l'appareil</value>
+  </data>
+  <data name="LblTakePhoto_PrescriptionViewModel_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LblTakePhoto_PrescriptionViewModel_Title" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="LblTimingPinSiteCareTitle" xml:space="preserve">
+    <value>Horaires d'entretien de l'emplacement des broches</value>
+  </data>
+  <data name="LblTitleSurgeonContact" xml:space="preserve">
+    <value>Coordonnées du chirurgien</value>
+  </data>
+  <data name="LblTitleUserProfile" xml:space="preserve">
+    <value>Profil utilisateur</value>
+  </data>
+  <data name="LblTitle_CleaningSolutionInfoPopup" xml:space="preserve">
+    <value>Solution nettoyante</value>
+  </data>
+  <data name="LblTitle_WelcomeAnonymous" xml:space="preserve">
+    <value>Bienvenue à myHEXplan !</value>
+  </data>
+  <data name="LblTitle_WizardInsightMessages" xml:space="preserve">
+    <value>Messages d'information</value>
+  </data>
+  <data name="LblTitle_WizardWelcomeLogged" xml:space="preserve">
+    <value>Bienvenue à myHEXplan !</value>
+  </data>
+  <data name="LblToday" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="LblToDoTitle_AllMyDailyTasks" xml:space="preserve">
+    <value>À faire</value>
+  </data>
+  <data name="LblUpdatedStatusMyPrescriptionPrefix" xml:space="preserve">
+    <value>Mis à jour</value>
+  </data>
+  <data name="LblUserPreferences_UserSettings" xml:space="preserve">
+    <value>PRÉFÉRENCES UTILISATEUR</value>
+  </data>
+  <data name="LblUserSettingsTitle" xml:space="preserve">
+    <value>Paramètres</value>
+  </data>
+  <data name="LblWellDone" xml:space="preserve">
+    <value>Bravo !</value>
+  </data>
+  <data name="LblWithPrescriptionInfo_PrescriptionStart" xml:space="preserve">
+    <value>Si vous avez été traité avec TL-HEX et avez reçu une ordonnance avec code QR de votre chirurgien, scannez-la pour activer myHEXplan pour l'ajustement quotidien des vérins télescopiques et les notifications automatiques.</value>
+  </data>
+  <data name="LblWizardPersonalGoalTitle" xml:space="preserve">
+    <value>Objectif personnel</value>
+  </data>
+  <data name="LblWizardPinSiteCareTitle" xml:space="preserve">
+    <value>Soin de l'emplacement des broches</value>
+  </data>
+  <data name="LblYouAreInPhasePefix" xml:space="preserve">
+    <value>Vous êtes dans</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="LegalSendAppFeedbackTitle" xml:space="preserve">
+    <value>Envoyer un commentaire sur l'application</value>
+  </data>
+  <data name="LegalTermsAndPrivacyTitle" xml:space="preserve">
+    <value>Conditions juridiques et confidentialité</value>
+  </data>
+  <data name="LegalTermsTitle" xml:space="preserve">
+    <value>Acceptation des conditions juridiques</value>
+  </data>
+  <data name="LoginTitleError" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="LongBone" xml:space="preserve">
+    <value>Os long</value>
+  </data>
+  <data name="MotivationalMessageGeneric" xml:space="preserve">
+    <value>Vivre avec votre fixateur</value>
+  </data>
+  <data name="MotivationalMessagePhisicalTherapy" xml:space="preserve">
+    <value>Physiothérapie</value>
+  </data>
+  <data name="MotivationalMessagePinSite" xml:space="preserve">
+    <value>Soin de l'emplacement des broches</value>
+  </data>
+  <data name="MotivationalMessageStrAdj" xml:space="preserve">
+    <value>Ajustement des vérins télescopiques</value>
+  </data>
+  <data name="NotificationPinSiteCareBody" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationPinSiteCareTitle" xml:space="preserve">
+    <value>💦 Il est temps de s'occuper des soins de l'emplacement des broches</value>
+  </data>
+  <data name="NotificationPrescriptionAdded" xml:space="preserve">
+    <value>ajouté</value>
+  </data>
+  <data name="NotificationPrescriptionRevoked" xml:space="preserve">
+    <value>retiré</value>
+  </data>
+  <data name="NotificationPrescriptionUpdateBody" xml:space="preserve">
+    <value>Votre ordonnance a été mise à jour. Veuillez consulter la rubrique « Ordonnance » pour plus de détails</value>
+  </data>
+  <data name="NotificationPrescriptionUpdated" xml:space="preserve">
+    <value>mis à jour</value>
+  </data>
+  <data name="NotificationPrescriptionUpdateTitle" xml:space="preserve">
+    <value>Mise à jour de l'ordonnance</value>
+  </data>
+  <data name="NotificationStrutAdjustmentBody" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationStrutAdjustmentTitle" xml:space="preserve">
+    <value>👌 Il est temps d'ajuster vos vérins télescopiques</value>
+  </data>
+  <data name="PrescriptionScanInfoTitle" xml:space="preserve">
+    <value>Informations</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Droit</value>
+  </data>
+  <data name="ShoppingListTitle" xml:space="preserve">
+    <value>De quoi ai-je besoin ?</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_BagForWaste" xml:space="preserve">
+    <value>Sac d'élimination des déchets</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_CleansingSolution" xml:space="preserve">
+    <value>Solution nettoyante</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_DisposableCups" xml:space="preserve">
+    <value>Gobelets jetables</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_SterileCottonSwabs" xml:space="preserve">
+    <value>Cotons-tiges stériles</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_SterileGauze22" xml:space="preserve">
+    <value>Gaze stérile de 5x5 cm (2x2 po)</value>
+  </data>
+  <data name="ShoppingList_ShoppingItem_SterileGauze44" xml:space="preserve">
+    <value>Gaze stérile de 10x10 cm (4x4 po)</value>
+  </data>
+  <data name="ShoppintListSharingPrefix" xml:space="preserve">
+    <value>J'ai besoin des produits suivants pour l'entretien de mon emplacement des broches :</value>
+  </data>
+  <data name="Tibia" xml:space="preserve">
+    <value>Tibia</value>
+  </data>
+</root>

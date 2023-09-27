@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DownloadedPrescriptions_en" xml:space="preserve">
+    <value>Downloaded Prescriptions:</value>
+  </data>
+  <data name="ErrorMessage01_en" xml:space="preserve">
+    <value>QR code may not be from myHEXplan (code: QRE01)</value>
+  </data>
+  <data name="ErrorMessage02_en" xml:space="preserve">
+    <value>QR code may have an invalid signature (code: QRE02)</value>
+  </data>
+  <data name="HowToScanText_en" xml:space="preserve">
+    <value>Hold over the QR Code printed on your paper prescription</value>
+  </data>
+  <data name="Item1ShoppingList_en" xml:space="preserve">
+    <value>Cleansing solution</value>
+  </data>
+  <data name="Item2ShoppingList_en" xml:space="preserve">
+    <value>Disposable cups</value>
+  </data>
+  <data name="Item3ShoppingList_en" xml:space="preserve">
+    <value>Sterile gauze dressing 2in x 2in (5cm x 5cm)</value>
+  </data>
+  <data name="Item4ShoppingList_en" xml:space="preserve">
+    <value>Sterile gauze dressing 4in x 4in (10cm x 10cm)</value>
+  </data>
+  <data name="Item5ShoppingList_en" xml:space="preserve">
+    <value>Sterile cotton swabs</value>
+  </data>
+  <data name="Item6ShoppingList_en" xml:space="preserve">
+    <value>Bag for waste disposal</value>
+  </data>
+  <data name="LblClickOnEmoticons_en" xml:space="preserve">
+    <value>Click on emoticons for setting</value>
+  </data>
+  <data name="LblDailyTimeInfo_en" xml:space="preserve">
+    <value>Set the time, at your convenience, for receiving pin site care alert notifications.</value>
+  </data>
+  <data name="LblDisableGoal_en" xml:space="preserve">
+    <value>Enable personal goal</value>
+  </data>
+  <data name="LblDoneTitle_en" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="LblDontGiveUp_en" xml:space="preserve">
+    <value>Don't give up!</value>
+  </data>
+  <data name="LblGeneralInfo_en" xml:space="preserve">
+    <value>myHEXplan is a travel companion and will give you insights on your treatment. Set the time, at your convenience, for receiving insight messages.</value>
+  </data>
+  <data name="LblGeneralMessage_en" xml:space="preserve">
+    <value>Mental Health is as important as physical health. Think positive! You will only wear this device for a short period of your life</value>
+  </data>
+  <data name="LblHelpVideoTutorial_en" xml:space="preserve">
+    <value>Tap play to start video tutorial</value>
+  </data>
+  <data name="LblInfoMessage_en" xml:space="preserve">
+    <value>myHEXplan delivers information throughout your treatment journey, with helpful reminders designed to support the oral and written information your surgeon has provided</value>
+  </data>
+  <data name="LblInfoPref_en" xml:space="preserve">
+    <value>The following preferences can be set anytime from the Settings screen.</value>
+  </data>
+  <data name="LblInsights_en" xml:space="preserve">
+    <value>Enable insights</value>
+  </data>
+  <data name="LblJourneyRemind_en" xml:space="preserve">
+    <value>You only wear this device for a short period of your life: remind yourself why you agreed to start this treatment journey.</value>
+  </data>
+  <data name="LblMoodFrustrated_en" xml:space="preserve">
+    <value>Frustrated</value>
+  </data>
+  <data name="LblMoodBored_en" xml:space="preserve">
+    <value>Bored</value>
+  </data>
+  <data name="LblMoodCalm_en" xml:space="preserve">
+    <value>Calm</value>
+  </data>
+  <data name="LblMoodEncouraged_en" xml:space="preserve">
+    <value>Encouraged</value>
+  </data>
+  <data name="LblMoodHappy_en" xml:space="preserve">
+    <value>Happy</value>
+  </data>
+  <data name="LblMoodNervous_en" xml:space="preserve">
+    <value>Nervous</value>
+  </data>
+  <data name="LblMoodIamOK_en" xml:space="preserve">
+    <value>I am OK</value>
+  </data>
+  <data name="LblMoodSad_en" xml:space="preserve">
+    <value>Sad</value>
+  </data>
+  <data name="LblMoodOptimistic_en" xml:space="preserve">
+    <value>Optimistic</value>
+  </data>
+  <data name="LblNoPrescription_en" xml:space="preserve">
+    <value>If you have been treated with a generic external fixation device or have not received a prescription with QR code, start your treatment without digital prescription.</value>
+  </data>
+  <data name="LblPreferenceInfo_en" xml:space="preserve">
+    <value>The following preferences can be set anytime from the Settings screen.</value>
+  </data>
+  <data name="LblPreferences_en" xml:space="preserve">
+    <value>The following preferences can be set anytime from the Settings screen.</value>
+  </data>
+  <data name="LblSelectPhoto_0_en" xml:space="preserve">
+    <value>Add your photo</value>
+  </data>
+  <data name="LblSelectPhoto_1_en" xml:space="preserve">
+    <value>Change your photo</value>
+  </data>
+  <data name="LblSetDailyTime_en" xml:space="preserve">
+    <value>Set alert time</value>
+  </data>
+  <data name="LblSetPersonalGoal_en" xml:space="preserve">
+    <value>Set your personal goal</value>
+  </data>
+  <data name="LblTitleAllMyDailyTask_en" xml:space="preserve">
+    <value>All my daily tasks</value>
+  </data>
+  <data name="LblTitleHowDoYouFeelToday_en" xml:space="preserve">
+    <value>How are you today?</value>
+  </data>
+  <data name="LblTitleInsightsMessages_en" xml:space="preserve">
+    <value>Insight messages</value>
+  </data>
+  <data name="LblTitleMyDiary_en" xml:space="preserve">
+    <value>My Diary</value>
+  </data>
+  <data name="LblTitlePersonalGoal_en" xml:space="preserve">
+    <value>Personal goal</value>
+  </data>
+  <data name="LblTitlePinSiteCareSetProfile_en" xml:space="preserve">
+    <value>Pin site care</value>
+  </data>
+  <data name="LblTitlePinSiteCare_en" xml:space="preserve">
+    <value>Pin site care</value>
+  </data>
+  <data name="LblTitlePrescriptionMessage_en" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="LblTitlePrescription_en" xml:space="preserve">
+    <value>My Prescriptions</value>
+  </data>
+  <data name="LblTitleProfile_en" xml:space="preserve">
+    <value>User profile</value>
+  </data>
+  <data name="LblTitleSettings_en" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="LblTitleShoppingList_en" xml:space="preserve">
+    <value>What do I need?</value>
+  </data>
+  <data name="LblTitleStartYourTreatment_en" xml:space="preserve">
+    <value>Start your treatment</value>
+  </data>
+  <data name="LblTitleStrutAdjust_en" xml:space="preserve">
+    <value>Struts adjustment</value>
+  </data>
+  <data name="LblTitleSupport_en" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="LblTitleTimeLapse_en" xml:space="preserve">
+    <value>My time-lapse</value>
+  </data>
+  <data name="LblTitleUserProfileCustomization_en" xml:space="preserve">
+    <value>Start your treatment</value>
+  </data>
+  <data name="LblTitleUserProfile_en" xml:space="preserve">
+    <value>User profile</value>
+  </data>
+  <data name="LblTitleWelcomeUserAnonymous_en" xml:space="preserve">
+    <value>Welcome to myHEXplan!</value>
+  </data>
+  <data name="LblTitleWelcomeUserNormal_en" xml:space="preserve">
+    <value>Welcome to myHEXplan!</value>
+  </data>
+  <data name="LblToDoTitle_en" xml:space="preserve">
+    <value>To do</value>
+  </data>
+  <data name="LblWithPrescription_en" xml:space="preserve">
+    <value>If you have been treated with TL-HEX and have received a prescription with QR code from your surgeon, scan it to enable myHEXplan for daily struts adjustment and automatic notifications.</value>
+  </data>
+  <data name="LbFrameId_en" xml:space="preserve">
+    <value>Frame ID</value>
+  </data>
+  <data name="LedLightState_en" xml:space="preserve">
+    <value>Turn Light ON/OFF</value>
+  </data>
+  <data name="NewPrescriptionAlertMessage_en" xml:space="preserve">
+    <value>New Prescription(s) for the frame ID A have been published</value>
+  </data>
+  <data name="RevokedPrescriptionAlertMessage_en" xml:space="preserve">
+    <value>Prescription(s) for the frame ID A have been revoked</value>
+  </data>
+  <data name="RevokedPrescriptionMessage_en" xml:space="preserve">
+    <value>Prescription revoked</value>
+  </data>
+  <data name="TxtFrustratedMood_en" xml:space="preserve">
+    <value>It is OK, this long treatment is frustrating. The device is just temporary. Remind yourself about the final goal of treatment and your team is here to support you in achieving that goal.</value>
+  </data>
+  <data name="TxtBoredMood_en" xml:space="preserve">
+    <value>Sometimes you will be tempted to say nothing is happening, because correction happens slowly. Do not give up! Each fruit has its own season.</value>
+  </data>
+  <data name="TxtCalmMood_en" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtEncouragedMood_en" xml:space="preserve">
+    <value>You are doing great job and the reward is coming soon.</value>
+  </data>
+  <data name="TxtHappyMood_en" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtNervousMood_en" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TxtIamOKMood_en" xml:space="preserve">
+    <value>Have another great day and keep up with your treatment.</value>
+  </data>
+  <data name="TxtSadMood_en" xml:space="preserve">
+    <value>Maybe you have had a hard day today? Try to do something you enjoy and keep your normal treatment routine.</value>
+  </data>
+  <data name="TxtOptimisticMood_en" xml:space="preserve">
+    <value>Optimistic - Your role in treatment is very important. You are 1 day closer today to the final goal.</value>
+  </data>
+  <data name="UpdatePrescriptionAlertMessage_en" xml:space="preserve">
+    <value>Prescription(s) for the frame ID A have been updated</value>
+  </data>
+  <data name="LblWellDone_en" xml:space="preserve">
+    <value>Well done!</value>
+  </data>
+  <data name="LblGeneralMessageInfection_en" xml:space="preserve">
+    <value>If you experience any of these signs, or if you have doubts on the pin or wire site cleaning procedure, you should contact your surgeon's office immediately.</value>
+  </data>
+  <data name="LblHelpInfectionText_en" xml:space="preserve">
+    <value>It is essential that you treat your external fixator with care and maintain clean, dry pin sites to help prevent infection.</value>
+  </data>
+  <data name="LblHelpListText_en" xml:space="preserve">
+    <value>Before starting, be sure that you have everything you need for pin site cleaning</value>
+  </data>
+  <data name="LblHelpVideoText_en" xml:space="preserve">
+    <value>Tap play to start video tutorial</value>
+  </data>
+  <data name="LblInfectionQuestion1_en" xml:space="preserve">
+    <value>Do you see redness at the pin or wire site?</value>
+  </data>
+  <data name="LblInfectionQuestion2_en" xml:space="preserve">
+    <value>Do you see swelling at the pin or wire site?</value>
+  </data>
+  <data name="LblInfectionQuestion3_en" xml:space="preserve">
+    <value>Do you see thick or colored discharge from the pin or wire site?</value>
+  </data>
+  <data name="LblInfectionQuestion4_en" xml:space="preserve">
+    <value>Do you see loosening or movement of the pin or wire?</value>
+  </data>
+  <data name="LblInfectionQuestion5_en" xml:space="preserve">
+    <value>Do you feel persistent pain or soreness at the pin or wire site?</value>
+  </data>
+  <data name="LblPinSiteCareHelpVideo_en" xml:space="preserve">
+    <value>Tap play to start video tutorial</value>
+  </data>
+  <data name="LblTitleInfection_en" xml:space="preserve">
+    <value>Am I getting an infection?</value>
+  </data>
+  <data name="LbStrutSite_en" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="LbStrutToBeDone_en" xml:space="preserve">
+    <value>To be done</value>
+  </data>
+  <data name="LblTitleUserDetails_en" xml:space="preserve">
+    <value>User profile</value>
+  </data>
+</root>

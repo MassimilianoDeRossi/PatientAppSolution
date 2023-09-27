@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:converters="clr-namespace:PatientApp.Converters"             
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:loc="clr-namespace:PatientApp.Localization"
+             x:Class="PatientApp.Views.HomePage"                       
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Home}"
+             >
+    <!--xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"-->
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid RowSpacing="0" ColumnSpacing="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--<controls:PageBackground Grid.RowSpan="5" ImageOpacity="1" ImageName="background01.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0" Source="toolbar_user" AutomationId="toolbar_user" Aspect="AspectFit" HeightRequest="30" HorizontalOptions="Start" Margin="0,0,0,0" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="USER_PROFILE" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Image Grid.Row="0" Grid.Column="2" Source="toolbar_setting" AutomationId="toolbar_setting" Aspect="AspectFit" HeightRequest="30" HorizontalOptions="End" Margin="0,0,0,0" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="SETTINGS" />
+                </Image.GestureRecognizers>
+            </Image>
+            <BoxView Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="1" HorizontalOptions="FillAndExpand" Color="#dddddd" Opacity="0.5" />
+        </Grid>
+        <controls:BigDateBackground Grid.Row="1" Margin="5" VerticalOptions="Center" DisplayDate="{Binding DisplayDate, Mode=TwoWay}" />
+        <StackLayout Grid.Row="2" Orientation="Horizontal" Margin="0,3,0,0" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsLoggedIn}">
+            <Image Source="ico_daily" HeightRequest="18"/>
+            <Label x:Name="BtnAllMyDailyTaskButton" AutomationId="BtnAllMyDailyTaskButton" 
+                   Text="{Binding [BtnAllMyDailyTasks], Source={x:Static loc:Translator.Instance}}" Style="{StaticResource LblBold}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="ALL_MY_DAILY_TASKS" NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <Grid Grid.Row="3" ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,0" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2" Source="hexagons_half.png" AutomationId="hexagons_half.png" Aspect="AspectFit" 
+                   IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverterConverter}}"  />
+            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2" Source="hexagon_strutadj.png" AutomationId="hexagon_strutadj.png"  Aspect="AspectFit"  
+                   IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverterConverter}}" />
+            <Grid Grid.Row="0" Grid.RowSpan="2" IsVisible="{Binding IsLoggedIn}" >
+                <ffimageloading:CachedImage Source="hexagons_full.png" AutomationId="hexagons_full.png" Aspect="AspectFit" />
+                <ffimageloading:CachedImage Source="hexagon_strutadj.png" AutomationId="hexagon_strutadj.png" Aspect="AspectFit" IsVisible="{Binding IsStrutAdjustmentEnabled}" />
+                <Grid IsVisible="{Binding IsStrutAdjustmentEnabled}">
+                    <ffimageloading:CachedImage Source="hexagon_strutadjalert.png" AutomationId="hexagon_strutadjalert.png" Aspect="AspectFit" IsVisible="{Binding HasStrutAdjustmentAlert}"  />
+                </Grid>
+                <ffimageloading:CachedImage Source="hexagon_prescriptionalert.png" AutomationId="hexagon_prescriptionalert.png" Aspect="AspectFit" IsVisible="{Binding HasPrescriptionAlert}"  />
+            </Grid>
+            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2" Source="hexagon_pinsitealert.png" AutomationId="hexagon_pinsitealert.png" Aspect="AspectFit" IsVisible="{Binding HasPinSiteCareAlert}"  />
+            <Grid Grid.Row="0" VerticalOptions="FillAndExpand" Margin="0,0,0,0" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" IsVisible="{Binding IsLoggedIn}" >
+                    <controls:TransparentMenuButton x:Name="BtnStrutAdjustButton"  AutomationId="BtnStrutAdjustButton" Grid.Column="0" Command="{Binding MenuCommand}" CommandParameter="STRUT_ADJUSTMENT_RECAP"
+                                                IsVisible="{Binding IsStrutAdjustmentEnabled}"  />
+                </Grid>
+                <controls:TransparentMenuButton x:Name="BtnStrutAdjustSampleButton"  AutomationId="BtnStrutAdjustSampleButton" Grid.Column="0" Command="{Binding MenuCommand}" CommandParameter="STRUT_ADJUSTMENT_SAMPLE" 
+                                                IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverterConverter}}"   />
+                <controls:TransparentMenuButton x:Name="BtnPinSiteCareButton"  AutomationId="BtnPinSiteCareButton" Grid.Column="1" Command="{Binding MenuCommand}" CommandParameter="PIN_SITE_CARE"  />
+                <controls:TransparentMenuButton x:Name="BtnPrescriptionButton" AutomationId="BtnPrescriptionButton" Grid.Column="2" Command="{Binding MenuCommand}" CommandParameter="MY_PRESCRIPTIONS" IsVisible="{Binding IsLoggedIn}"/>
+            </Grid>
+            <Grid Grid.Row="1" VerticalOptions="FillAndExpand" Margin="0,0,0,0" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <controls:TransparentMenuButton x:Name="BtnSupportButton"   AutomationId="BtnSupportButton"  Grid.Column="1" Grid.ColumnSpan="2" Command="{Binding MenuCommand}" CommandParameter="MY_DIARY" IsVisible="{Binding IsLoggedIn}"/>
+                <controls:TransparentMenuButton x:Name="BtnTimeLapseButton" AutomationId="BtnTimeLapseButton"  Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding MenuCommand}" CommandParameter="TIME_LAPSE_ALBUMS" />
+            </Grid>
+        </Grid>
+        <!--<controls:RoundedButton  Grid.Row="4" x:Name="BtnStartPrescriptionButton" AutomationId="BtnStartPrescriptionButton" 
+                             Text="{Binding [BtnTapHereToStart_Home], Source={x:Static loc:Translator.Instance}}"  IsEnabled="{Binding IsConnectionAvailable}"
+                             IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverterConverter}}" Padding="20,0,20,0"
+                             Margin="0,0,0,20" Command="{Binding MenuCommand}" CommandParameter="PRESCRIPTION_START" DisabledColor="Blue"/>-->
+        <Button  Grid.Row="4" x:Name="BtnStartPrescriptionButton" AutomationId="BtnStartPrescriptionButton" Style="{StaticResource RoundedButton}"
+                             Text="{Binding [BtnTapHereToStart_Home], Source={x:Static loc:Translator.Instance}}"  IsEnabled="{Binding IsConnectionAvailable}"
+                             IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverterConverter}}" 
+                             Margin="0,0,0,20" Command="{Binding MenuCommand}" CommandParameter="PRESCRIPTION_START" />
+
+
+        <Grid Grid.Row="4" VerticalOptions="CenterAndExpand" Margin="0,0,0,0" IsVisible="{Binding HasNotUpToDateAlert}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <BoxView Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="WhiteSmoke" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Image Grid.Column="0" Source="alert" Margin="10" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label Grid.Column="1" AutomationId="LblOutOfDate" Text="{Binding [LblOutOfDate], Source={x:Static loc:Translator.Instance}}" Style="{StaticResource LabelError}" Margin="0,10,20,10"
+               HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start" />
+        </Grid>
+
+        <Label AutomationId="LblHowDoYouFeel" Grid.Row="5" Style="{StaticResource LabelSemiBoldWhite}" Text="{Binding MoodText}" HorizontalOptions="Center" VerticalTextAlignment="Center"
+               IsVisible="{Binding CanSetMood}" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="HOW_DO_YOU_FEEL" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <StackLayout Orientation="Vertical" Grid.Row="6" x:Name="panelDebugTools" IsVisible="{Binding IsTestMode}">
+            <Button Text="Debug tools" Command="{Binding MenuCommand}" CommandParameter="TEST" HorizontalOptions="Center"
+                    BackgroundColor="Transparent" BorderColor="Transparent"/>
+        </StackLayout>
+
+        <Image x:Name="BtnMySurgeonButton" AutomationId="BtnMySurgeonButton" 
+                Grid.Row="0" Grid.RowSpan="7" HorizontalOptions="Start" VerticalOptions="End" Margin="15,0,0,10"
+                Source="support" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MenuCommand}" CommandParameter="SUPPORT" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+            
+
+        <ActivityIndicator Grid.Row="0" Grid.RowSpan="7" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                           Color="White" IsRunning="True" IsVisible="{Binding IsBusy}" />
+
+    </Grid>
+</views:BaseContentPage>

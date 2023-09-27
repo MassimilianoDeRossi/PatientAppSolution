@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:views="clr-namespace:PatientApp.Views;assembly=PatientApp.Standard"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls;assembly=PatientApp.Standard"
+                       xmlns:local="clr-namespace:PatientApp;assembly=PatientApp.Standard"
+                       xmlns:converters="clr-namespace:PatientApp.Converters;assembly=PatientApp.Standard"
+                       xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+                       xmlns:behaviors="clr-namespace:Xam.Behaviors;assembly=Xam.Behaviors"
+                       x:Class="PatientApp.Views.ShoppingListPage"
+                       BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=ShoppingList}">
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:LocalizationConverter x:Key="LocalizationConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [ShoppingListTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0"/>
+        <!--<Image Source="ico_share"  Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" Margin="0,0,12,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1"
+            Command="{Binding ShareCheckedListCommand}" />
+            </Image.GestureRecognizers>
+        </Image>-->
+        <Image Source="ico_share" AutomationId="ico_share" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" Margin="0,0,12,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShareCheckedListCommand}" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource DefaultBackgroundColor}"></StackLayout>
+        <!--<Image Grid.Row="2" Source="box_ombra" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-40,0,0"/>-->
+        <StackLayout Grid.Row="2" Padding="20" Margin="0,-40,0,0">
+            <Image Source="img_pinsitecare" AutomationId="img_pinsitecare" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
+        <Label AutomationId="LblShoppingList_GeneralMessage"  Grid.Row="3" Text="{Binding [LblShoppingList_GeneralMessage], Source={x:Static localization:Translator.Instance}}" Margin="20,0,20,5"/>
+        <Grid Grid.Row="4"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0">
+            <ListView SelectedItem="{Binding SelectedViewShoppingItem}" ItemsSource="{Binding ShoppingList}" BackgroundColor="{StaticResource LightGrey}"
+                      RowHeight="40" SeparatorVisibility="None"
+                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,20,0">
+                <ListView.Effects>
+                    <local:NoScrollListViewEffect></local:NoScrollListViewEffect>
+                </ListView.Effects>
+                <behaviors:Interaction.Behaviors>
+                    <behaviors:BehaviorCollection>
+                        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding ItemTappedCommand}"/>
+                    </behaviors:BehaviorCollection>
+                </behaviors:Interaction.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:CustomTransparentViewCell AutomationId="VcShoppingListItem">
+                            <controls:CustomTransparentViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="40" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image AutomationId="ImgStateImage" Grid.Column="0" Source="{Binding StateImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="20,0,0,0" HeightRequest="18"/>
+                                    <!--<Label AutomationId="LblShoppingItemDescription" Grid.Column="1" Style="{StaticResource LblShoppingListElement}" Text="{Binding Description}" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" 
+                                            VerticalTextAlignment="Center" HorizontalOptions="Start" />-->
+                                    <Label AutomationId="LblShoppingItemDescription" Grid.Column="1" Style="{StaticResource LblShoppingListElement}" Text="{Binding Description, Converter={StaticResource LocalizationConverter}}" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" 
+                                            VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                    <BoxView Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="1" Margin="20,0,0,0"
+                                             BackgroundColor="Transparent" 
+                                             Color="{StaticResource Grey}" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
+
+                                </Grid>
+                            </controls:CustomTransparentViewCell.View>
+                        </controls:CustomTransparentViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Image Source="ico_info" AutomationId="ImgCleansingSolutionInfo" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="25" Margin="0,5,25,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickOnInfoForCleaningSolutionCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </Grid>
+</views:BaseContentPage>

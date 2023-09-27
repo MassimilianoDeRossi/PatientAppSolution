@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             xmlns:converters="clr-namespace:PatientApp.Converters;assembly=PatientApp"
+             x:Class="PatientApp.Views.MyPrescriptionsPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=MyPrescriptions}">
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+            <converters:BoolToColorConverter x:Key="RedIfTrueConverter" TrueColor="Red" FalseColor="DarkGray" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="White" RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <controls:HeaderControl AutomationId="LblTitle" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Title="{Binding [LblMyPrescriptionsTitle], Source={x:Static localization:Translator.Instance}}"/>
+        <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="10" Padding="15"                     
+                     BackgroundColor="#FFEAEAEA" >
+            <StackLayout Orientation="Horizontal">
+                <BoxView HeightRequest="10" WidthRequest="10" BackgroundColor="{StaticResource ActiveLatencyColor}" />
+                <Label AutomationId="LblLatencyLegend" 
+                       Text="{Binding [LblMyPrescriptionsLatencyLegend], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblBold}"
+                       Margin="10,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center"
+                       TextColor="{StaticResource ActiveLatencyColor}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <BoxView HeightRequest="10" WidthRequest="10" BackgroundColor="{StaticResource ActiveCorrectionColor}" />
+                <Label AutomationId="LblLatencyLegend" 
+                       Text="{Binding [LblMyPrescriptionsCorrectionLegend], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblBold}"
+                       Margin="10,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center"
+                       TextColor="{StaticResource ActiveCorrectionColor}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <BoxView HeightRequest="10" WidthRequest="10" BackgroundColor="{StaticResource ActiveConsolidationColor}" />
+                <Label AutomationId="LblLatencyLegend" 
+                       Text="{Binding [LblMyPrescriptionsConsolidationLegend], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblBold}"
+                       Margin="10,0,0,0" VerticalTextAlignment="Center" VerticalOptions="Center"
+                       TextColor="{StaticResource ActiveConsolidationColor}"/>
+            </StackLayout>
+        </StackLayout>
+
+        <Label AutomationId="LblFrameIDTitle" Grid.Row="2" Grid.Column="0" 
+               Text="{Binding [LblMyPrescriptionsFrameID], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblSubTitleStyle}"
+               HorizontalOptions="Start" VerticalOptions="Center" Margin="5,5,0,5" />
+        <Label AutomationId="LblStatusTitle" Grid.Row="2" Grid.Column="1" 
+               Text="{Binding [LblMyPrescriptionsStatus], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblSubTitleStyle}"
+               HorizontalTextAlignment="End" VerticalOptions="Center"  Margin="0,5,5,5" />
+        <ListView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                  ItemsSource="{Binding PrescriptionRecap}" 
+                  SeparatorColor="Transparent" HasUnevenRows="True" 
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                  Margin="5,0,5,10" RowHeight="60">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="False">
+                        <ViewCell.View>
+                            <Grid RowSpacing="0" ColumnSpacing="5" 
+                                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  Padding="5,0,0,10" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="20" />
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Margin="10,0,0,0"
+                                             IsVisible="{Binding IsRemoved, Converter={StaticResource InverterConverter}}">
+                                    <Label AutomationId="LblFrameIDValue" Text="{Binding FrameID}" VerticalTextAlignment="End" />
+                                    <Label AutomationId="LblCurrentPhaseValue" Text="{Binding CurrentPhase}" VerticalTextAlignment="End" />
+                                </StackLayout>
+                                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="End" HorizontalOptions="End" Spacing="0">
+                                    <Label AutomationId="LblPrescriptionStatus" Text="{Binding Status}" VerticalTextAlignment="Center" HorizontalTextAlignment="End"
+                                                          IsVisible="{Binding IsRemoved, Converter={StaticResource InverterConverter}}"
+                                                          Style="{StaticResource LabelPrescriptionStatus}"/>
+                                    <Label AutomationId="LblPrescriptionStatusDateTime" Text="{Binding StatusDateTimeFormatted}" VerticalTextAlignment="Center" HorizontalTextAlignment="End"
+                                           Style="{StaticResource LabelPrescriptionStatusDateTime}"/>
+                                </StackLayout>
+                                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ColumnSpacing="0" IsVisible="{Binding IsRemoved, Converter={StaticResource InverterConverter}}"
+                                      >
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="{Binding Col1Length}" />
+                                        <ColumnDefinition Width="{Binding Col2Length}" />
+                                        <ColumnDefinition Width="{Binding Col3Length}" />
+                                        <ColumnDefinition Width="{Binding Col4Length}" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:RoundedBox Grid.Column="0" Color="{Binding Col1Color}" CornerRadius="10" 
+                                                         BorderTypeToRound="Left"/>
+
+                                    <BoxView Grid.Column="1" Color="{Binding Col2Color}" />
+                                    <BoxView Grid.Column="1" Color="Black" WidthRequest="1" HorizontalOptions="Start" IsVisible="{Binding Sep1Visible}"/>
+                                    
+                                    <BoxView Grid.Column="2" Color="{Binding Col3Color}" />
+
+
+                                    <controls:RoundedBox Grid.Column="3" Color="{Binding Col4Color}" CornerRadius="10" 
+                                                         BorderTypeToRound="Right"/>
+
+                                    <BoxView Grid.Column="3" Color="Black" WidthRequest="1" HorizontalOptions="Start" IsVisible="{Binding Sep3Visible}"/>
+                                </Grid>
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding .Status}" TextColor="Red" IsVisible="{Binding IsRemoved}" 
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                       Style="{StaticResource LblBold}" />
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label AutomationId="LblLastSyncDate" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextColor="{Binding SyncError, Converter={StaticResource RedIfTrueConverter}}"
+           Text="{Binding SyncStateDescription}" Margin="10,0,0,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+               HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </Grid>
+</views:BaseContentPage>

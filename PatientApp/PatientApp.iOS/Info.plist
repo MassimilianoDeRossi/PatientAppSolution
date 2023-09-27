@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>10.3</string>
+	<key>CFBundleDisplayName</key>
+	<string>myHEXplan</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.orthofix.myhexplan.on</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>appicon-60@2x</string>
+		<string>appicon-60@3x</string>
+		<string>appicon-76.png</string>
+		<string>appicon-76@2x</string>
+		<string>appicon-Small-40</string>
+		<string>appicon-Small@2x</string>
+		<string>appicon-60@3x</string>
+		<string>appicon-Small</string>
+		<string>appicon-Small@2x</string>
+		<string>appicon-60@3x</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To save the photo, we need access to your Photo Library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To attach a photo to your feedback, we need access to your Photo Library.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need access to your calendar to set reminder</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to the camera to scan QR Code of the prescription, to set an optional profile picture and to create a TimeLapse of your correction progress.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fonts/Titillium-Bold.otf</string>
+		<string>Fonts/Titillium-Light.otf</string>
+		<string>Fonts/Titillium-Regular.otf</string>
+		<string>Fonts/Titillium-Semibold.otf</string>
+		<string>Fonts/Titillium-Thin.otf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>myHEXplan</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>it</string>
+		<string>de</string>
+		<string>es</string>
+		<string>fr</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Usage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Local Usage </string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0.0</string>
+</dict>
+</plist>

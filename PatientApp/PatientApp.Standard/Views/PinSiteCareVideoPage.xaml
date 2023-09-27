@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:me="clr-namespace:PatientApp.MarkupExtensions;assembly=PatientApp.Standard"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:videoPlayer="clr-namespace:Octane.Xamarin.Forms.VideoPlayer;assembly=Octane.Xamarin.Forms.VideoPlayer"
+             x:Class="PatientApp.Views.PinSiteCareVideoPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=PinSiteCare}">
+    <Grid RowSpacing="0" BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblWizardPinSiteCareTitle], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <!-- Android video stretched issue fixed in code behind -->
+        <videoPlayer:VideoPlayer x:Name="videoPlayer" Grid.Row="1" Source="{me:VideoResource pinsitecarevideo.mp4}" FillMode="ResizeAspect" VerticalOptions="Center" AutoPlay="True" />
+    </Grid>
+</views:BaseContentPage>

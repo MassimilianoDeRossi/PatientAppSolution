@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.Controls.HeaderControl"             
+             RowSpacing="0" BackgroundColor="#5597E5" HeightRequest="44">
+    <!--<Grid.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+      <OnPlatform.Android>0,0,0,0</OnPlatform.Android>
+      <OnPlatform.WinPhone>0,0,0,0</OnPlatform.WinPhone>
+    </OnPlatform>
+  </Grid.Padding>-->
+
+    <Label x:Name="LblTitle" AutomationId="LblTitle"  Style="{StaticResource LblHeader}"
+           VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center"
+           Margin="80,0,80,0"/>
+    <Image Source="back" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" Margin="0,3,0,3"
+           AutomationId="back">
+        <Image.IsVisible>
+            <OnPlatform x:TypeArguments="x:Boolean"
+                      iOS="True"
+                      Android="False"/>
+        </Image.IsVisible>
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" 
+                            Command="{Binding GoBackCommand}" CommandParameter="BACK" />
+        </Image.GestureRecognizers>
+    </Image>
+
+</Grid>

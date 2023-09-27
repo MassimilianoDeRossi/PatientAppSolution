@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.Controls.WizardButtonsControl"             
+             RowSpacing="0"                   
+      >
+
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
+  </Grid.ColumnDefinitions>
+    <Label x:Name="LblPrev" AutomationId="LblPrev"  Grid.Column="0" Text="{Binding [LblBack_ButtonsControl], Source={x:Static localization:Translator.Instance}}"  Style="{StaticResource LblWizardButtonStyle}"
+           IsVisible="{Binding CanGoBack}"
+           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"               
+            >
+    <Label.GestureRecognizers>
+      <TapGestureRecognizer Command="{Binding WizardPrevCommand}" />
+    </Label.GestureRecognizers>
+  </Label>
+    <Label x:Name="LblNext" AutomationId="LblNext"  Grid.Column="1" Text="{Binding [LblNext_ButtonsControl], Source={x:Static localization:Translator.Instance}}" Style="{StaticResource LblWizardButtonStyle}"
+           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"           
+            >
+    <Label.GestureRecognizers>
+      <TapGestureRecognizer Command="{Binding WizardNextCommand}" />
+    </Label.GestureRecognizers>
+  </Label>
+  <BoxView Grid.ColumnSpan="2" HeightRequest="1" Color="DarkGray" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
+
+</Grid>
+

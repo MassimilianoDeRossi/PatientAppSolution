@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+             xmlns:circle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:converters="clr-namespace:PatientApp.Converters"             
+             x:Class="PatientApp.Views.ProfilePage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Profile}"
+             >
+    <views:BaseContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverterConverter x:Key="InverterConverter" />
+        </ResourceDictionary>
+    </views:BaseContentPage.Resources>
+    <Grid BackgroundColor="{StaticResource LightGrey}" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0" Title="{Binding [LblTitleUserProfile], Source={x:Static localization:Translator.Instance}}"  Padding="0" AutomationId="LblTitle"/>
+        <BoxView Grid.Row="1" BackgroundColor="{StaticResource DefaultBackgroundColor}" HeightRequest="30" VerticalOptions="Start"/>
+        <Grid Grid.Row="1" Margin="0,-10,0,0" VerticalOptions="Start" HorizontalOptions="Center" RowSpacing="0" >
+            <Image Source="box_ombra" VerticalOptions="Start" HorizontalOptions="Center" Aspect="AspectFill" />
+            <Grid Margin="20,20,20,20" RowSpacing="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="1" Source="circle_camera" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="120" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectPhotoCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <circle:CircleImage Grid.Row="1" Source="{Binding ProfileImagePath}" FillColor="Transparent"                          
+                        Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" VerticalOptions="CenterAndExpand" >
+                    <circle:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectPhotoCommand}" />
+                    </circle:CircleImage.GestureRecognizers>
+                </circle:CircleImage>
+                <Button Grid.Row="2" HorizontalOptions="Center" Text="{Binding SelectPhotoMessage}"  Margin="0,0,0,10"
+                        Command="{Binding SelectPhotoCommand}" BackgroundColor="Transparent" BorderColor="Transparent"/>
+            </Grid>
+        </Grid>
+        <StackLayout Orientation="Vertical" Grid.Row="2" Margin="20,-10,20,0" Spacing="0" >
+            <Label Text="Nickname" Style="{StaticResource LblTitleBoldStyle}" AutomationId="LblNickName"/>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="{Binding Nickname}" Style="{StaticResource LblTitleStyle}" VerticalOptions="Center" AutomationId="LblNickNameValue" />
+                <Button Grid.Column="1" Text="Change" Command="{Binding EditNicknameCommand}"  VerticalOptions="Center" AutomationId="BtnChangeNickName"
+                        BackgroundColor="Transparent" BorderColor="Transparent"/>
+            </Grid>
+            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" Color="DarkGray" Margin="0,5,0,5" />
+            <Grid AutomationId="BtnOpenSurgeonContactDetails" IsVisible="{Binding IsLoggedIn}">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SurgeonInfoCommand}" />
+                </Grid.GestureRecognizers>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="{Binding [LblTitleSurgeonContact], Source={x:Static localization:Translator.Instance}}" VerticalOptions="Center" Style="{StaticResource LblTitleStyle}" AutomationId="LblOpenSurgeonContactDetails"/>
+                <Image Grid.Column="1" Source="ico_details" HeightRequest="20" AutomationId="ImgOpenSurgeonContactDetails" IsVisible="{Binding HasSurgeonInfo}"/>
+                <Label Grid.Column="1" Text="{Binding [LblLoading], Source={x:Static localization:Translator.Instance}}" AutomationId="LblLoadingInfo" VerticalOptions="Center" IsVisible="{Binding HasSurgeonInfo, Converter={StaticResource InverterConverter}}"/>
+            </Grid>
+            <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" Color="DarkGray" Margin="0,5,0,5" IsVisible="{Binding IsLoggedIn}"/>
+        </StackLayout>
+    </Grid>
+</views:BaseContentPage>

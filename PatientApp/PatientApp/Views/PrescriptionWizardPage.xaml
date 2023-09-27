@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientApp.Views"            
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"                          
+             x:Class="PatientApp.Views.PrescriptionWizardPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Prescription}">
+  >
+  <ScrollView>
+    <carousel:CarouselViewControl                                
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      AnimateTransition="true"
+                                      ShowIndicators="True" IndicatorsShape="Circle" IndicatorsTintColor="White"
+                                      ShowArrows="True"
+                                      InterPageSpacing="3"
+                                      BackgroundColor="Black"
+                                      IsSwipingEnabled="true"
+                                      Orientation="Horizontal"                                      
+                                      >
+
+    </carousel:CarouselViewControl>
+  </ScrollView>
+</views:BaseContentPage>

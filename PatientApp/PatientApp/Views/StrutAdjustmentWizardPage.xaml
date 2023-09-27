@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<views:BaseContentPage 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"             
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+             x:Class="PatientApp.Views.StrutAdjustmentWizardPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=StrutAdjustment}"
+             BackgroundColor="LightBlue"
+  >
+  <Grid RowSpacing="0" >
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <carousel:CarouselViewControl Grid.Row="1"                                      
+                                      HorizontalOptions="FillAndExpand"
+                                      AnimateTransition="true"
+                                      ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="{StaticResource DarkText}" CurrentPageIndicatorTintColor="White"
+                                      ShowArrows="False"
+                                      InterPageSpacing="3"
+                                      BackgroundColor="Transparent"
+                                      IsSwipeEnabled="true"
+                                      ItemTemplate="{Binding WizardTemplateSelector}"
+                                      ItemsSource="{Binding WizardPages}"
+                                      Orientation="Horizontal"        
+                                      Position="{Binding WizardPosition}"
+                                      />
+    <ActivityIndicator Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center"
+                           IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"/>
+  </Grid>
+</views:BaseContentPage>

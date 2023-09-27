@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PatientApp.Interfaces</RootNamespace>
+    <AssemblyName>PatientApp.Interfaces</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PatientApp.DataModel.Standard\PatientApp.DataModel.Standard.csproj" />
+  </ItemGroup>
+
+</Project>

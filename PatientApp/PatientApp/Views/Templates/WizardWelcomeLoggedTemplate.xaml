@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+    xmlns:controls="clr-namespace:PatientApp.Views.Controls"
+    xmlns:local="clr-namespace:PatientApp"
+    xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp"
+    x:Class="PatientApp.Views.WizardWelcomeLoggedTemplate"                          
+             BackgroundColor="Transparent">
+
+    <Grid VerticalOptions="Center" Margin="10,0,10,0" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="300" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <BoxView Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+        <Label AutomationId="LblTitle" Grid.Row="0" Text="{Binding [LblTitle_WizardWelcomeLogged], Source={x:Static localization:Translator.Instance}}"  Style="{StaticResource LblTitleStyle}" 
+           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Start" Margin="0,10,0,10"/>
+
+        <Grid Grid.Row="1" BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=WizardUserSettings}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="welcome_user" AutomationId="welcome_user" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" Margin="5" />
+                <Label Grid.Column="1" AutomationId="LblInfoMessage" Text="{Binding [LblInfoMessage_WizardWelcomeLogged], Source={x:Static localization:Translator.Instance}}" 
+             Margin="5,5,5,5"
+             HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center" TextColor="Black" />
+            </Grid>
+            <Label Grid.Row="2" AutomationId="LblInfoPref" Text="{Binding [LblInfoPref_WizardWelcomeLogged], Source={x:Static localization:Translator.Instance}}" Margin="50,3,50,3"
+                    HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="DarkGray" />
+        </Grid>
+
+        <controls:WizardButtonsControl Grid.Row="2" BackgroundColor="White" PrevButtonText="{Binding WizardPrevButtonText}" NextButtonText="{Binding WizardNextButtonText}"
+                                   BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=WizardUserSettings}" />
+
+
+    </Grid>
+
+</ContentView>

@@ -1,0 +1,7 @@
+﻿"CFBundleDisplayName" = "myHexPlan";
+"NSPhotoLibraryAddUsageDescription" = "Pour sauvegarder la photo, nous avons besoin d'accéder à votre bibliothèque d'images.";
+"NSPhotoLibraryUsageDescription" = "Pour joindre une photo à votre commentaire, nous avons besoin d'accéder à votre bibliothèque d'images.";
+"NSCalendarsUsageDescription" = "We need access to your calendar to set reminder";
+"NSCameraUsageDescription" = "Cette application a besoin d'accéder à l'appareil photo pour prendre des photos.";
+"NSLocationAlwaysUsageDescription" = "myHexPlan needs to access your location";
+"NSLocationWhenInUseUsageDescription" = "myHexPlan needs to access your location";

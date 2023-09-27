@@ -1,0 +1,30 @@
+﻿<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"                       
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:local="clr-namespace:PatientApp"
+             x:Class="PatientApp.Views.TimeLapseImageZoomPopup"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=TimeLapse}"
+             CloseWhenBackgroundIsClicked="True"
+              >
+    <popup:PopupPage.Animation>
+        <animations:ScaleAnimation 
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      HasBackgroundAnimation="True"/>
+    </popup:PopupPage.Animation>
+    <Grid BackgroundColor="#FF000000" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,0">
+        <Image Aspect="AspectFit" Source="{Binding ZoomImage.ImagePath}" 
+             HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</popup:PopupPage>

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\Packages\Xamarin.UITest.3.2.2\build\Xamarin.UITest.props" Condition="Exists('..\..\Packages\Xamarin.UITest.3.2.2\build\Xamarin.UITest.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38D0EA80-01D6-4EFA-8B21-3FF51AD9E1B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PatientApp.UITest</RootNamespace>
+    <AssemblyName>PatientApp.UITest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestCloud|AnyCPU'">
+    <OutputPath>bin\TestCloud\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugTestCloud|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugTestCloud\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest, Version=3.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\Xamarin.UITest.3.2.2\lib\net45\Xamarin.UITest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppInitializer.cs" />
+    <Compile Include="Features\AllPatientsDailyTasks_item_3783.feature.cs">
+      <DependentUpon>AllPatientsDailyTasks_item_3783.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\AllTextMyHEXPlanApp.feature.cs">
+      <DependentUpon>AllTextMyHEXPlanApp.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\FirstAccessAsAnonymousUser_item_3778.feature.cs">
+      <DependentUpon>FirstAccessAsAnonymousUser_item_3778.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\FirstAccessByPrescriptionActivation_item_3779.feature.cs">
+      <DependentUpon>FirstAccessByPrescriptionActivation_item_3779.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\MyContacts_item_4948.feature.cs">
+      <DependentUpon>MyContacts_item_4948.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\PinSiteCare_item_3710.feature.cs">
+      <DependentUpon>PinSiteCare_item_3710.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SelfTestSurvey_item_3793.feature.cs">
+      <DependentUpon>SelfTestSurvey_item_3793.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SetUserProfileAnonymous_item_3776.feature.cs">
+      <DependentUpon>SetUserProfileAnonymous_item_3776.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SetUserProfileNormal_item_4196.feature.cs">
+      <DependentUpon>SetUserProfileNormal_item_4196.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\ShoppingList_item_3700.feature.cs">
+      <DependentUpon>ShoppingList_item_3700.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\StrutAdjustmentConfirmation_item_3795.feature.cs">
+      <DependentUpon>StrutAdjustmentConfirmation_item_3795.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\StrutAdjustmentReminder_item_3788.feature.cs">
+      <DependentUpon>StrutAdjustmentReminder_item_3788.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\BackdoorAndroid.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackdoorAndroid.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\BackdoorIOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackdoorIOS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAssert.cs" />
+    <Compile Include="Resources\ElementAndroid.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElementAndroid.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ElementIOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElementIOS.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FeatureBase.cs" />
+    <Compile Include="PartialFeature.cs" />
+    <Compile Include="Resources\Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Config.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\PappSteps.cs" />
+    <Compile Include="Resources\TextForTesting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextForTesting.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\AllPatientsDailyTasks_item_3783.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllPatientsDailyTasks_item_3783.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\AllTextMyHEXPlanApp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AllTextMyHEXPlanApp.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\FirstAccessAsAnonymousUser_item_3778.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FirstAccessAsAnonymousUser_item_3778.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\FirstAccessByPrescriptionActivation_item_3779.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FirstAccessByPrescriptionActivation_item_3779.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\MyContacts_item_4948.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MyContacts_item_4948.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\PinSiteCare_item_3710.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PinSiteCare_item_3710.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SelfTestSurvey_item_3793.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SelfTestSurvey_item_3793.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SetUserProfileAnonymous_item_3776.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SetUserProfileAnonymous_item_3776.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SetUserProfileNormal_item_4196.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SetUserProfileNormal_item_4196.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ShoppingList_item_3700.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ShoppingList_item_3700.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\StrutAdjustmentConfirmation_item_3795.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>StrutAdjustmentConfirmation_item_3795.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\StrutAdjustmentReminder_item_3788.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>StrutAdjustmentReminder_item_3788.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\BackdoorAndroid.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BackdoorAndroid.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\BackdoorIOS.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BackdoorIOS.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ElementAndroid.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ElementAndroid.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ElementIOS.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ElementIOS.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Config.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TextForTesting.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextForTesting.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatientApp\PatientApp.Android\PatientApp.Android.csproj">
+      <Project>{08387b9a-7b86-4267-b842-b44b7f0055a3}</Project>
+      <Name>PatientApp.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PatientApp\PatientApp.iOS\PatientApp.iOS.csproj">
+      <Project>{25b22cf8-8b86-406a-b4cf-78d7548137a9}</Project>
+      <Name>PatientApp.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PatientApp\PatientApp.Standard\PatientApp.Standard.csproj">
+      <Project>{627c650f-1989-40d1-a973-b475bbc3d5a9}</Project>
+      <Name>PatientApp.Standard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\Packages\Xamarin.UITest.3.2.2\build\Xamarin.UITest.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\Packages\Xamarin.UITest.3.2.2\build\Xamarin.UITest.props'))" />
+  </Target>
+</Project>

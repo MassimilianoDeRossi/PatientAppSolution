@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:localization="clr-namespace:PatientApp.Localization;assembly=PatientApp.Standard"
+             x:Class="PatientApp.Views.QrCodeScanPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Home}"
+             >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:HeaderControl Grid.Row="0"  Title="{Binding [LblScanTitle], Source={x:Static localization:Translator.Instance}}" />
+
+        <zxing:ZXingScannerView Grid.Row="1" x:Name="zxing" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AutomationId = "zxingScannerView" />
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" BackgroundColor="#e0e0e0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Label Grid.Row="0" Text="{Binding [LblScanHintMessage], Source={x:Static localization:Translator.Instance}}" 
+                   VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" Margin="20,10,20,10" />
+
+            <Image Grid.Row="1" Source="scanbrackets" AutomationId="scanbrackets" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Margin="30" />
+            <!--<controls:RoundedButton Grid.Row="1" x:Name="btnMocked" Text="Read mocked code" Opacity="0.5" IsVisible="{Binding IsTestMode}"
+                                    HorizontalOptions="Center" VerticalOptions="Center" Clicked="btnMocked_Clicked" />-->
+
+            <Button Grid.Row="1" x:Name="btnMocked" Text="Read mocked code" Opacity="0.5" IsVisible="{Binding IsTestMode}" Style="{StaticResource RoundedButton}"
+                                    HorizontalOptions="Center" VerticalOptions="Center" Clicked="btnMocked_Clicked" />
+
+            <!--<controls:RoundedButton Grid.Row="2" x:Name="btnLight" Text="{Binding [BtnTurnLight], Source={x:Static localization:Translator.Instance}}" Margin="0,20,0,20" Clicked="btnLight_Clicked"  />-->
+            <Button Grid.Row="2" x:Name="btnLight" Style="{StaticResource RoundedButton}"
+                    Text="{Binding [BtnTurnLight], Source={x:Static localization:Translator.Instance}}" Margin="0,20,0,20" Clicked="btnLight_Clicked"  />
+
+        </Grid>
+
+    </Grid>
+</views:BaseContentPage>

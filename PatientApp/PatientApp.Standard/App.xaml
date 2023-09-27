@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PatientApp"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             x:Class="PatientApp.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <!-- App Blue: #0088C2 -->
+            <!-- App Gray: #292933 -->
+
+            <Color x:Key="DefaultBackgroundColor">#5597E5</Color>
+            <Color x:Key="InverseBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="DefaultTextColor">#FFFFFF</Color>
+            <Color x:Key="ButtonBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+            <Color x:Key="DefaultSeparatorColor">#494948</Color>
+            <Color x:Key="ListViewGroupHeaderBackgroundColor">#0088C2</Color>
+            <Color x:Key="ListViewGroupHeaderTextColor">#FFFFFF</Color>
+
+            <!-- Application Official Colors -->
+            <Color x:Key="BlueOrthofix">#004B98</Color>
+            <Color x:Key="DarkText">#292933</Color>
+            <Color x:Key="BlueGrey">#7B8994</Color>
+            <Color x:Key="Grey">#B2B2B2</Color>
+            <Color x:Key="MediumGrey">#CCCCCC</Color>
+            <Color x:Key="LightGrey">#F6F6F6</Color>
+
+            <!-- Prescription specific color -->
+            <Color x:Key="InactivePhaseColor">#FFEAEAEA</Color>
+
+            <!--<Color x:Key="ActiveLatencyColor">#ffa31a</Color>
+            <Color x:Key="ActiveCorrectionColor">#FF4bb452</Color>
+            <Color x:Key="ActiveConsolidationColor">#FF0680f9</Color>-->
+
+            <!-- BLUE -->
+            <Color x:Key="ActiveLatencyColor">#FF0680f9</Color>
+            <!-- ORANGE -->
+            <Color x:Key="ActiveCorrectionColor">#ffa31a</Color>
+            <!-- GREEN -->
+            <Color x:Key="ActiveConsolidationColor">#FF4bb452</Color>
+
+            <!-- Application Official Fonts -->
+            <OnPlatform x:Key="TitilliumLight"  x:TypeArguments="x:String" 
+                        Android="fonts/Titillium-Light.otf#Titillium Lt" 
+                        iOS="Titillium-Light" />
+
+            <OnPlatform x:Key="TitilliumRegular"  x:TypeArguments="x:String" 
+                        Android="fonts/Titillium-Regular.otf#Titillium Lt" 
+                        iOS="Titillium-Regular" />
+
+            <OnPlatform x:Key="TitilliumSemiBold"  x:TypeArguments="x:String" 
+                        Android="fonts/Titillium-Semibold.otf#Titillium Lt" 
+                        iOS="Titillium-Semibold" />
+            
+            <Style TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+            
+            <Style x:Key="LblSemiBold" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LabelPrescriptionStatus" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LabelPrescriptionStatusDateTime" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblMessage" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblPinSiteCareTime" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblInsightMessages" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblPersonalGoal" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblCreditsBlue" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblCredits" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblMessageSetting" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblMessageSubTitleSetting" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+            
+            <Style x:Key="LabelSemiBoldWhite" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblHeader" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            
+            <Style x:Key="LblHeaderBlack" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LblSemiBoldBlack" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblBlue" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+            </Style>
+
+            <Style x:Key="LblBlueMessageSetting" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+            </Style>
+
+            <Style x:Key="BtnBold" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+            </Style>
+
+            <Style x:Key="LblBold" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+            </Style>
+
+            <Style x:Key="LblBadge" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+
+            <Style x:Key="LblInvStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+            </Style>
+
+            <Style x:Key="LblTitleStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LblPinSiteCareLinkStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style x:Key="LblTitleBoldStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+
+            <Style x:Key="LblTitleBlueStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LblSubTitleStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="LblInfectionList" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="LblInfectionListTakePhoto" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+
+
+            <Style x:Key="LblBigTextStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="FontSize" Value="36" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblErrorPopupTitleStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+
+            <Style x:Key="LblErrorPopupMessageStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LabelError" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <!--Big Date Background-->
+            <Style x:Key="LblDay" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="90" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblMonth" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblDayOfWeek" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="30" />
+            </Style>
+
+            <!-- AllMyDailyTaskStyle -->
+
+            <Style x:Key="BtnHowDoYouFeelStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+
+            <Style x:Key="LblMonthAndDayTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="26" />
+            </Style>
+
+            <Style x:Key="LblDayNameTitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="21" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumRegular}"/>
+            </Style>
+
+            <Style x:Key="LblTodoListTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="FontSize" Value="23" />
+            </Style>
+
+            <Style x:Key="LblDoneListTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueGrey}" />
+                <Setter Property="FontSize" Value="23" />
+            </Style>
+
+            <Style x:Key="LblTodoElement" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+            </Style>
+
+            <Style x:Key="LblDoneElement" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueGrey}" />
+            </Style>
+
+            <!-- HowDoYouFeelStyle -->
+
+            <Style x:Key="LblMoodStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueGrey}" />
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+
+            <Style x:Key="LblMoodStyleSelected" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontFamily" Value="{StaticResource TitilliumSemiBold}"/>
+            </Style>
+
+            <Style x:Key="LblTitleInvStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="LblNotesStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="LblNotesInvStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="LblWizardButtonStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="LblHexagonStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="Font" Value="12" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="FilledButtonStyle" >
+                <Setter Property="BackgroundColor" Value="#004B97" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="BorderWidth" Value="0" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style TargetType="ListView">
+                <Setter Property="SeparatorColor" Value="#494948" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            
+            <!-- Shopping List-->
+
+
+            <Style x:Key="LblShoppingListElement" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <!--<Style x:Key="listViewStyle" TargetType="controls:CustomListView">
+        <Setter Property="UseAlternateColor" Value="true" />
+        <Setter Property="AlternateColor" Value="#FAFAFA" />
+        <Setter Property="SeparatorColor" Value="#494948" />
+        <Setter Property="BackgroundColor" Value="#FFFFFF" />
+      </Style>-->
+
+            <Style x:Key="LblMyDiaryListItem" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style x:Key="LblMyDiaryListItemAlternate" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource DarkText}" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
+
+            <Style TargetType="TimePicker">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="#F4F4F4" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="#FF6600" />
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+            </Style>
+
+            <!--<Style TargetType="controls:RoundedButton">
+                <Setter Property="BackgroundColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Padding" Value="40,20,40,20" />
+                <Setter Property="BorderRadius" Value="100" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>-->
+
+            <Style x:Key="RoundedButton" TargetType="Button" >
+                <Setter Property="BackgroundColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Padding" Value="40,0,40,0" />
+                <Setter Property="BorderRadius" Value="20" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+
+            <!--<Style TargetType="local:NavigationTabPage">
+                <Setter Property="BarTextColor" Value="{StaticResource BlueOrthofix}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource LightGrey}" />
+            </Style>-->
+
+            <Style TargetType="views:BaseContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource DefaultBackgroundColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

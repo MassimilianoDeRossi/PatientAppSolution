@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PatientApp.Views.Controls"             
+             xmlns:views="clr-namespace:PatientApp.Views"
+             xmlns:local="clr-namespace:PatientApp"
+             x:Class="PatientApp.Views.TestPage"
+             BindingContext="{Binding Source={x:Static local:App.ViewModelLocator}, Path=Test}"
+             >
+
+  <Grid  BackgroundColor="White">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <controls:HeaderControl Grid.Row="0" Title="Support Page" />
+
+    <StackLayout Grid.Row="1" Orientation="Vertical" Spacing="0" >
+      <Button Text="Reset application data" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding ResetAllCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Prescription update notification" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding PrescriptionUpdateNotificationCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Motivational Message notification" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding MotivationalMessageNotificationCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Stress Test" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding StressTestCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Set prescription outdated" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding PrescriptionOutdatedCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Set connection ON / OFF" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding SetConnectionCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Local notifications (multiple items)" VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding LocalNotificationCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Button Text="Simulate crash " VerticalOptions="Center" HorizontalOptions="Center" 
+                Command="{Binding SimulateCrashCommand}" IsVisible="{Binding EnabledDebugTools}"
+                />
+      <Entry Text="{Binding ApplicationId}" HorizontalOptions="Center"  IsReadOnly="True" Margin="5" />
+      <Entry Text="{Binding PushToken}" HorizontalOptions="Center" IsReadOnly="True"  Margin="5" />
+    </StackLayout>
+    <StackLayout Grid.Row="2" Orientation="Vertical">
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Scheduled local notifications: " VerticalOptions="Center" />
+        <Label Text="{Binding ScheduledLocalNotificationsCount}" VerticalOptions="Center" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Build Configuration: " VerticalOptions="Center" />
+        <Label Text="{Binding BuildConfiguration}" VerticalOptions="Center" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Api Url: " VerticalOptions="Center" />
+        <Label Text="{Binding ApiUrl}" VerticalOptions="Center" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Forced No Connection: " VerticalOptions="Center" />
+        <Label Text="{Binding ForceNoConnection}" VerticalOptions="Center" />
+      </StackLayout>
+    </StackLayout>
+    <!--<ListView Grid.Row="3" ItemsSource="{Binding ScheduledNotifications}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View>
+                            <Grid RowSpacing="0" >
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding DateTime, StringFormat='{0:dd/MM hh:mm tt}'}" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" 
+                                                VerticalTextAlignment="Center" HorizontalOptions="Start" />
+                                <Label Grid.Column="1" Text="{Binding NotificationType}" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" 
+                                                VerticalTextAlignment="Center" HorizontalOptions="Start" />
+
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+  </Grid>
+</views:BaseContentPage>
